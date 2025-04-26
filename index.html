@@ -2,92 +2,86 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CS Skin Profit | Home</title>
+  <title>CSSkinProfit | Choose an Option</title>
   <style>
-    body, html {
+    body {
       margin: 0;
-      padding: 0;
-      height: 100%;
       overflow: hidden;
-      background: #0f0f0f;
-      font-family: 'Poppins', sans-serif;
+      background-color: #0d0d0d;
+      font-family: Arial, sans-serif;
+      text-align: center;
       color: white;
+      height: 100vh;
     }
 
-    .falling-skins {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      overflow: hidden;
-      z-index: 0;
+    h1 {
+      margin-top: 100px;
+      font-size: 48px;
+    }
+
+    .button-container {
+      margin-top: 30px;
+    }
+
+    .button {
+      background-color: #ff4757;
+      color: white;
+      padding: 15px 30px;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
+      font-size: 24px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .button:hover {
+      background-color: #e84118;
     }
 
     .skin {
       position: absolute;
-      width: 50px;
+      width: 80px;
       animation: fall linear infinite;
       opacity: 0.8;
+      z-index: 0;
     }
 
     @keyframes fall {
-      0% {transform: translateY(-100px) rotate(0deg);}
-      100% {transform: translateY(110vh) rotate(360deg);}
-    }
-
-    .center-content {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      text-align: center;
-    }
-
-    .center-content h1 {
-      font-size: 3em;
-      margin-bottom: 20px;
-    }
-
-    .button {
-      background-color: #ff4747;
-      border: none;
-      padding: 15px 30px;
-      margin: 10px;
-      border-radius: 30px;
-      font-size: 1.2em;
-      color: white;
-      cursor: pointer;
-      transition: background 0.3s;
-      text-decoration: none;
-    }
-
-    .button:hover {
-      background-color: #ff1c1c;
+      0% {
+        transform: translateY(-150px) rotate(0deg);
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+      }
     }
   </style>
 </head>
 <body>
 
-<div class="falling-skins">
-  <!-- Example CS skins (you can add more) -->
-  <img src="https://cdn.skinport.com/images/items/csgo/Weapon_AWP_Dragon_Lore.png" class="skin" style="left:10%; animation-duration: 8s;">
-  <img src="https://cdn.skinport.com/images/items/csgo/Weapon_AK47_Redline.png" class="skin" style="left:25%; animation-duration: 10s;">
-  <img src="https://cdn.skinport.com/images/items/csgo/Weapon_Glock18_Fade.png" class="skin" style="left:40%; animation-duration: 12s;">
-  <img src="https://cdn.skinport.com/images/items/csgo/Weapon_Knife_Karambit_Doppler.png" class="skin" style="left:55%; animation-duration: 9s;">
-  <img src="https://cdn.skinport.com/images/items/csgo/Weapon_M4A1S_Hot_Rod.png" class="skin" style="left:70%; animation-duration: 11s;">
-  <img src="https://cdn.skinport.com/images/items/csgo/Weapon_Deagle_Blaze.png" class="skin" style="left:85%; animation-duration: 7s;">
-</div>
+  <h1>Welcome to CSSkinProfit</h1>
+  <div class="button-container">
+    <button class="button" onclick="location.href='trading.html'">Trading Sites</button>
+    <button class="button" onclick="location.href='gambling.html'">Gambling Sites</button>
+  </div>
 
-<div class="center-content">
-  <h1>CS Skin Profit</h1>
-  <a href="trading.html" class="button">Trading Sites</a>
-  <a href="gambling.html" class="button">Gambling Sites</a>
-</div>
+  <script>
+    const images = [
+      'https://steamuserimages-a.akamaihd.net/ugc/788622967207697735/2E7F493BAF5E6A8A4B15415E6B7E914E5076A01F/', // AWP Dragon Lore
+      'https://steamuserimages-a.akamaihd.net/ugc/948469983530689891/8DC76BCF58A86D0DC7C5E70D1F68F0A881F91663/', // AK-47 Fire Serpent
+      'https://steamuserimages-a.akamaihd.net/ugc/1789609197749775760/7E07D3E52D1CE11D8F4DAD214B5E6FBE97757F99/', // M4A4 Howl
+      'https://steamuserimages-a.akamaihd.net/ugc/1817763600771358210/9CB7D3B8F7DE2CB85E429DC905D4D93F313BC7D7/'  // Desert Eagle Blaze
+    ];
+
+    for (let i = 0; i < 20; i++) {
+      const img = document.createElement('img');
+      img.src = images[Math.floor(Math.random() * images.length)];
+      img.className = 'skin';
+      img.style.left = Math.random() * 100 + 'vw';
+      img.style.animationDuration = (Math.random() * 5 + 5) + 's';
+      document.body.appendChild(img);
+    }
+  </script>
 
 </body>
 </html>
