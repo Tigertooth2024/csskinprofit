@@ -2,50 +2,92 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CSSkinProfit | Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CS Skin Profit | Home</title>
   <style>
-    body {
+    body, html {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0d1117;
-      color: #c9d1d9;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: #0f0f0f;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+    }
+
+    .falling-skins {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .skin {
+      position: absolute;
+      width: 50px;
+      animation: fall linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      0% {transform: translateY(-100px) rotate(0deg);}
+      100% {transform: translateY(110vh) rotate(360deg);}
+    }
+
+    .center-content {
+      position: relative;
+      z-index: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
+      height: 100%;
       text-align: center;
     }
-    h1 {
+
+    .center-content h1 {
       font-size: 3em;
-      margin-bottom: 1em;
+      margin-bottom: 20px;
     }
-    .buttons {
-      display: flex;
-      gap: 30px;
-    }
-    .buttons a {
-      background: #238636;
-      color: white;
-      text-decoration: none;
-      padding: 1em 2em;
-      border-radius: 8px;
+
+    .button {
+      background-color: #ff4747;
+      border: none;
+      padding: 15px 30px;
+      margin: 10px;
+      border-radius: 30px;
       font-size: 1.2em;
+      color: white;
+      cursor: pointer;
       transition: background 0.3s;
+      text-decoration: none;
     }
-    .buttons a:hover {
-      background: #2ea043;
+
+    .button:hover {
+      background-color: #ff1c1c;
     }
   </style>
 </head>
 <body>
 
-  <h1>Welcome to CSSkinProfit</h1>
-  <div class="buttons">
-    <a href="trading.html">Trading Sites</a>
-    <a href="gambling.html">Gambling Sites</a>
-  </div>
+<div class="falling-skins">
+  <!-- Example CS skins (you can add more) -->
+  <img src="https://cdn.skinport.com/images/items/csgo/Weapon_AWP_Dragon_Lore.png" class="skin" style="left:10%; animation-duration: 8s;">
+  <img src="https://cdn.skinport.com/images/items/csgo/Weapon_AK47_Redline.png" class="skin" style="left:25%; animation-duration: 10s;">
+  <img src="https://cdn.skinport.com/images/items/csgo/Weapon_Glock18_Fade.png" class="skin" style="left:40%; animation-duration: 12s;">
+  <img src="https://cdn.skinport.com/images/items/csgo/Weapon_Knife_Karambit_Doppler.png" class="skin" style="left:55%; animation-duration: 9s;">
+  <img src="https://cdn.skinport.com/images/items/csgo/Weapon_M4A1S_Hot_Rod.png" class="skin" style="left:70%; animation-duration: 11s;">
+  <img src="https://cdn.skinport.com/images/items/csgo/Weapon_Deagle_Blaze.png" class="skin" style="left:85%; animation-duration: 7s;">
+</div>
+
+<div class="center-content">
+  <h1>CS Skin Profit</h1>
+  <a href="trading.html" class="button">Trading Sites</a>
+  <a href="gambling.html" class="button">Gambling Sites</a>
+</div>
 
 </body>
 </html>
