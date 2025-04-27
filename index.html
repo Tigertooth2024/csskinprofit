@@ -19,6 +19,46 @@
       position: relative;
     }
 
+    /* Background Glow Around Edges */
+    body::before {
+      content: "";
+      position: absolute;
+      top: -100px;
+      left: -100px;
+      right: -100px;
+      bottom: -100px;
+      background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Light beams */
+    .beam {
+      position: absolute;
+      width: 300px;
+      height: 100%;
+      background: linear-gradient(120deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 100%);
+      animation: moveBeam 20s linear infinite;
+      transform: rotate(20deg);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @keyframes moveBeam {
+      0% {
+        left: -400px;
+        opacity: 0.2;
+      }
+      50% {
+        left: 100%;
+        opacity: 0.05;
+      }
+      100% {
+        left: -400px;
+        opacity: 0.2;
+      }
+    }
+
     h1 {
       font-size: 60px;
       margin-bottom: 40px;
@@ -64,7 +104,7 @@
       width: 80px;
       animation: fallBounce 7s ease-in-out forwards;
       opacity: 0.85;
-      z-index: 0;
+      z-index: 5;
       pointer-events: none;
     }
 
@@ -91,7 +131,7 @@
       height: 6px;
       animation: floatParticle linear infinite;
       pointer-events: none;
-      z-index: 1;
+      z-index: 3;
     }
 
     @keyframes floatParticle {
@@ -110,6 +150,10 @@
   </style>
 </head>
 <body>
+
+  <!-- Light Beams -->
+  <div class="beam" style="top:0; animation-delay: 0s;"></div>
+  <div class="beam" style="top:0; animation-delay: 10s;"></div>
 
   <h1>Welcome to CS Skin Profit</h1>
   <div class="button-container">
@@ -135,7 +179,7 @@
 
       setTimeout(() => {
         img.remove();
-      }, 7000); // same as animation duration
+      }, 7000);
     }
 
     function createParticle() {
@@ -148,7 +192,7 @@
 
       setTimeout(() => {
         particle.remove();
-      }, 10000); // Clean up after the particle finishes floating
+      }, 10000);
     }
 
     setInterval(createSkin, 300);
