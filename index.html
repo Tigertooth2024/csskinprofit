@@ -46,24 +46,25 @@
 
     .skin {
       position: absolute;
-      width: 80px;
-      animation: fallBounce linear;
-      opacity: 0.85;
+      width: 60px;
+      animation: fallBounce 6s ease-in-out forwards;
+      opacity: 0.8;
       z-index: 0;
+      pointer-events: none;
     }
 
     @keyframes fallBounce {
       0% {
-        transform: translateY(-150px) rotate(0deg);
+        transform: translateY(-100px) rotate(0deg);
       }
       70% {
-        transform: translateY(80vh) rotate(180deg);
+        transform: translateY(75vh) rotate(180deg);
       }
       85% {
-        transform: translateY(70vh) rotate(270deg);
+        transform: translateY(65vh) rotate(270deg);
       }
       100% {
-        transform: translateY(110vh) rotate(360deg);
+        transform: translateY(80vh) rotate(360deg);
       }
     }
   </style>
@@ -78,21 +79,32 @@
 
   <script>
     const images = [
-     'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvcHJvZHVjdHMvdjIvNzQwMmI0MTlkMDQwOGY3ZTU5N2VkNDNkOTUwN2U1ZTcvcGxheXNpZGUucG5n/1500/auto/85/notrim/4f194ee6f80d9295db05c9dbc27e7a80.webp',
-     'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvcHJvZHVjdHMvdjIvNDUzNmQ2NGE0YmM2NDhhNGFkZGY4NTFiOTA2MjI0YzEvcGxheXNpZGUucG5n/1500/auto/85/notrim/61d85434d64da34eaec6c7a812bae2fd.webp',
-     'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvcHJvZHVjdHMvdjIvZTQ4MzE0MzkwNjNjNzRmM2QwOTZkNWJlYWExODM3ZWIvcGxheXNpZGUucG5n/1500/auto/85/notrim/8582f396e3265f57389addc5f5414d86.webp',
-     'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvcHJvZHVjdHMvdjIvOTc4NTAxNmUzZWEzNmQwNzMwZjVhNDJkMDUwZWYwMGMvcGxheXNpZGUucG5n/1500/auto/85/notrim/a5d430b87e62adf9628996bb82b8f08a.webp'
-];
+      'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvcHJvZHVjdHMvdjIvNzQwMmI0MTlkMDQwOGY3ZTU5N2VkNDNkOTUwN2U1ZTcvcGxheXNpZGUucG5n/1500/auto/85/notrim/4f194ee6f80d9295db05c9dbc27e7a80.webp',
+      'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvcHJvZHVjdHMvdjIvNDUzNmQ2NGE0YmM2NDhhNGFkZGY4NTFiOTA2MjI0YzEvcGxheXNpZGUucG5n/1500/auto/85/notrim/61d85434d64da34eaec6c7a812bae2fd.webp',
+      'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvcHJvZHVjdHMvdjIvZTQ4MzE0MzkwNjNjNzRmM2QwOTZkNWJlYWExODM3ZWIvcGxheXNpZGUucG5n/1500/auto/85/notrim/8582f396e3265f57389addc5f5414d86.webp',
+      'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvcHJvZHVjdHMvdjIvOTc4NTAxNmUzZWEzNmQwNzMwZjVhNDJkMDUwZWYwMGMvcGxheXNpZGUucG5n/1500/auto/85/notrim/a5d430b87e62adf9628996bb82b8f08a.webp'
+    ];
 
-    for (let i = 0; i < 20; i++) {
+    function spawnSkin() {
       const img = document.createElement('img');
       img.src = images[Math.floor(Math.random() * images.length)];
       img.className = 'skin';
       img.style.left = Math.random() * 100 + 'vw';
-      img.style.animationDuration = (Math.random() * 5 + 8) + 's';
-      img.style.animationTimingFunction = 'ease-in-out';
+      img.style.width = (Math.random() * 30 + 50) + 'px';
+      img.style.animationDuration = (Math.random() * 3 + 5) + 's';
+      img.style.transform = `rotate(${Math.random() * 360}deg)`;
+
       document.body.appendChild(img);
+
+      img.addEventListener('animationend', () => {
+        img.remove();
+      });
     }
+
+    // Instead of dropping all at once, make them rain
+    setInterval(() => {
+      spawnSkin();
+    }, 400); // every 0.4 seconds a new skin falls
   </script>
 
 </body>
