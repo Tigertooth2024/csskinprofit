@@ -9,10 +9,25 @@
     body {
       margin: 0;
       font-family: 'Poppins', Arial, sans-serif;
-      background: linear-gradient(135deg, #0d0d0d 0%, #1a1a2e 50%, #16213e 100%);
+      background: linear-gradient(135deg, #0d1117 20%, #1a1a2e 50%, #16213e 100%);
       color: #ffffff;
       padding: 40px;
       text-align: center;
+      overflow: hidden;
+      background-size: 400% 400%;
+      animation: gradientAnimation 8s ease infinite;
+    }
+
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
     }
 
     h1 {
@@ -29,11 +44,13 @@
       margin: 30px auto;
       padding: 30px;
       border-radius: 15px;
+      background: #1e2431;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
       transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
       max-width: 800px;
       text-align: left;
       overflow: hidden;
+      position: relative;
     }
 
     .site:hover {
@@ -43,6 +60,7 @@
 
     .site h2 {
       font-size: 32px;
+      color: #ff4757;
       margin-bottom: 15px;
       font-weight: bold;
     }
@@ -95,78 +113,65 @@
       text-align: center;
     }
 
-    /* Site-specific branding styles */
-    .dmarket {
-      background: #1b3d6a;
-      color: #ffffff;
+    .site-logo {
+      width: 40px;
+      height: auto;
+      margin-right: 15px;
     }
 
-    .whitemarket {
-      background: #ffffff;
-      color: #333333;
-    }
-
-    .gamerpay {
-      background: #4a4a4a;
-      color: #ffffff;
-    }
-
-    .skinswap {
-      background: #232323;
-      color: #ffffff;
-    }
-
-    .shadowpay {
-      background: #212121;
-      color: #ffffff;
-    }
-
-    .site img {
-      max-width: 100px;
-      margin-bottom: 15px;
-    }
   </style>
 </head>
 <body>
 
   <h1>Trading Sites</h1>
 
-  <!-- First Site: DMarket -->
-  <div class="site dmarket">
-    <img src="https://cdn-mp.dmarket.com/prod/v1-17-12/assets/img/dm-ua-logo.png" alt="DMarket Logo">
-    <h2>DMarket</h2>
+  <!-- First Site -->
+  <div class="site" style="background: #2c3e50;">
+    <div style="display: flex; align-items: center;">
+      <img src="https://cdn-mp.dmarket.com/prod/v1-17-12/assets/img/dm-ua-logo.png" class="site-logo" alt="DMarket Logo">
+      <h2>DMarket</h2>
+    </div>
     <p>DMarket is one of the largest and most trusted marketplaces for trading skins. With low fees, a secure platform, and a wide variety of skins available, it’s a top choice for both novice and professional traders alike. The platform offers a seamless user experience, with fast transactions and a transparent pricing model. DMarket allows users to easily buy, sell, and trade in-game items, and supports various popular games, including CS:GO. The affiliate program is also a great way to earn commissions by referring new users.</p>
     <a href="https://dmarket.com?ref=hseVSWrJt8" target="_blank">Try DMarket Now!</a>
   </div>
 
-  <!-- Second Site: White Market -->
-  <div class="site whitemarket">
-    <img src="https://pricempire.com/assets/providers/whitemarket_icon.webp" alt="White Market Logo">
-    <h2>White Market</h2>
+  <!-- Second Site -->
+  <div class="site" style="background: #34495e;">
+    <div style="display: flex; align-items: center;">
+      <img src="https://pricempire.com/assets/providers/whitemarket_icon.webp" class="site-logo" alt="White Market Logo">
+      <h2>White Market</h2>
+    </div>
     <p>White Market is an advanced, peer-to-peer marketplace for trading skins. Known for its secure transactions and wide range of game skins, White Market offers a highly reliable platform with minimal fees. Their user interface is simple and intuitive, making it easy to list, buy, and sell items. The platform’s security is top-notch, ensuring that users can trade without fear of scams or fraud. With strong community support and continuous improvements, White Market is perfect for those looking for a safe trading experience.</p>
     <a href="https://white.market/invite/bcbe14c5666f8135" target="_blank">Try White Market Now!</a>
   </div>
 
-  <!-- Third Site: GamerPay -->
-  <div class="site gamerpay">
-    <img src="https://gamerpay.gg/img/logo_dark.png" alt="GamerPay Logo">
-    <h2>GamerPay</h2>
+  <!-- Third Site -->
+  <div class="site" style="background: #7f8c8d;">
+    <div style="display: flex; align-items: center;">
+      <img src="https://gamerpay.gg/img/logo_dark.png" class="site-logo" alt="GamerPay Logo">
+      <h2>GamerPay</h2>
+    </div>
     <p>GamerPay is an innovative skin trading platform that simplifies the buying and selling process. It focuses on providing a hassle-free experience with low transaction fees, quick payouts, and secure trading. GamerPay is perfect for traders who want to avoid the complicated processes and high costs of traditional platforms. They also offer a partner program for users looking to earn extra income. With an easy-to-use interface and high levels of security, GamerPay ensures that both buyers and sellers can complete their transactions smoothly.</p>
     <a href="https://gamerpay.gg/partner/6539fbda40" target="_blank">Try GamerPay Now!</a>
   </div>
 
-  <!-- Fourth Site: SkinSwap -->
-  <div class="site skinswap">
-    <img src="https://skinswap.com/r/csskinprofit" alt="SkinSwap Logo">
-    <h2>SkinSwap</h2>
+  <!-- Fourth Site -->
+  <div class="site" style="background: #16a085;">
+    <div style="display: flex; align-items: center;">
+      <img src="https://skinswap.com/r/csskinprofit" class="site-logo" alt="SkinSwap Logo">
+      <h2>SkinSwap</h2>
+    </div>
     <p>SkinSwap offers a fast and reliable platform for trading skins. Known for its streamlined trading process and competitive pricing, SkinSwap is an excellent choice for players looking to quickly swap their skins for something else. The site also provides a marketplace for buying and selling skins, along with an easy-to-navigate interface. SkinSwap stands out for its transparent pricing, low fees, and frequent promotions. If you’re looking for a hassle-free trading experience with an emphasis on value, SkinSwap is the way to go.</p>
-    <a href="https://steamcommunity.com/tradeoffer/new/?partner=1241432713&token=HhQdMATm" target="_blank">Try SkinSwap Now!</a>
+    <a href="https://skinswap.com/r/csskinprofit" target="_blank">Try SkinSwap Now!</a>
+    <p><strong>Get a free skin up to $50 with the code <span style="color: #ff4757;">csskinprofit</span>!</strong></p>
   </div>
 
-  <!-- Fifth Site: ShadowPay -->
-  <div class="site shadowpay">
-    <img src="https://shadowpay.com/images/origin/icons/logo.svg" alt="ShadowPay Logo">
-    <h2>ShadowPay</h2>
+  <!-- Fifth Site -->
+  <div class="site" style="background: #8e44ad;">
+    <div style="display: flex; align-items: center;">
+      <img src="https://shadowpay.com/images/origin/icons/logo.svg" class="site-logo" alt="ShadowPay Logo">
+      <h2>ShadowPay</h2>
+    </div>
     <p>ShadowPay is a fast-growing platform known for its low fees and robust features for skin trading. With a wide range of skins and an intuitive trading system, ShadowPay makes the buying and selling process incredibly easy. It also allows users to trade directly via their Steam accounts, reducing the risk of scams. With great customer service, secure transactions, and low fees, ShadowPay ensures that users have a smooth experience when trading their skins. ShadowPay’s affiliate program also offers great opportunities to earn by referring new users.</p>
     <a href="https://shadowpay.com?utm_campaign=JQKcCMCzAifqSZH" target="_blank">Try ShadowPay Now!</a>
   </div>
