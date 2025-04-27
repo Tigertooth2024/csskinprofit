@@ -101,16 +101,14 @@ h1 {
 .skin {
   position: absolute;
   width: 80px;
-  height: auto;
   animation: fallBounce 7s ease-in-out forwards;
   opacity: 0.85;
   z-index: 5;
   pointer-events: none;
-  background-color: transparent; /* Makes the background transparent */
-  border: none;
+  background-color: #1a1a2e;  /* Background color matching your site's gradient */
+  border-radius: 8px;  /* Optional for a rounded corner effect */
 }
 
-/* Keyframes for skin falling effect */
 @keyframes fallBounce {
   0% {
     transform: translateY(-300px) rotate(0deg);
