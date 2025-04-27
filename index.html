@@ -2,48 +2,61 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CSSkinProfit | Choose an Option</title>
+  <title>Skin Rain</title>
   <style>
     body {
       margin: 0;
       overflow: hidden;
       background-color: #0d0d0d;
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', Arial, sans-serif;
       color: white;
       height: 100vh;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      position: relative;
+      flex-direction: column;
       text-align: center;
+      position: relative;
     }
 
     h1 {
-      font-size: 48px;
+      font-size: 60px;
+      margin-bottom: 40px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      position: relative;
       z-index: 10;
-      margin: 0;
+      background: linear-gradient(90deg, #ff4757, #ffa502);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .button-container {
-      margin-top: 30px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
       z-index: 10;
+      position: relative;
     }
 
     .button {
-      background-color: #ff4757;
+      background: linear-gradient(135deg, #ff4757, #e84118);
       color: white;
       padding: 15px 30px;
-      margin: 10px;
       border: none;
-      border-radius: 8px;
-      font-size: 24px;
+      border-radius: 12px;
+      font-size: 22px;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: all 0.3s ease;
+      font-weight: bold;
+      box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
     }
 
     .button:hover {
-      background-color: #e84118;
+      background: linear-gradient(135deg, #e84118, #ff6b81);
+      box-shadow: 0 6px 20px rgba(255, 107, 129, 0.6);
+      transform: scale(1.05);
     }
 
     .skin {
@@ -55,37 +68,32 @@
       pointer-events: none;
     }
 
-   @keyframes fallBounce {
+    @keyframes fallBounce {
       0% {
-        transform: translateY(-500px) rotate(0deg); /* Start much higher off-screen */
+        transform: translateY(-300px) rotate(0deg);
       }
       65% {
-        transform: translateY(70vh) rotate(180deg); /* Fall lower but bounce higher */
+        transform: translateY(70vh) rotate(180deg);
       }
       80% {
-        transform: translateY(58vh) rotate(270deg); /* Bounce up slightly */
+        transform: translateY(58vh) rotate(270deg);
       }
-     100% {
+      100% {
         transform: translateY(75vh) rotate(360deg);
       }
-}
+    }
   </style>
 </head>
 <body>
 
-  <h1>Welcome to CSSkinProfit</h1>
+  <h1>Welcome to Skin Rain</h1>
   <div class="button-container">
-    <button class="button" onclick="location.href='trading.html'">Trading Sites</button>
-    <button class="button" onclick="location.href='gambling.html'">Gambling Sites</button>
+    <button class="button">Get Started</button>
+    <button class="button">Learn More</button>
   </div>
 
   <script>
     const images = [
-      'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvcHJvZHVjdHMvdjIvNzQwMmI0MTlkMDQwOGY3ZTU5N2VkNDNkOTUwN2U1ZTcvcGxheXNpZGUucG5n/1500/auto/85/notrim/4f194ee6f80d9295db05c9dbc27e7a80.webp',
-      'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvcHJvZHVjdHMvdjIvNDUzNmQ2NGE0YmM2NDhhNGFkZGY4NTFiOTA2MjI0YzEvcGxheXNpZGUucG5n/1500/auto/85/notrim/61d85434d64da34eaec6c7a812bae2fd.webp',
-      'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvcHJvZHVjdHMvdjIvZTQ4MzE0MzkwNjNjNzRmM2QwOTZkNWJlYWExODM3ZWIvcGxheXNpZGUucG5n/1500/auto/85/notrim/8582f396e3265f57389addc5f5414d86.webp',
-      'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvcHJvZHVjdHMvdjIvOTc4NTAxNmUzZWEzNmQwNzMwZjVhNDJkMDUwZWYwMGMvcGxheXNpZGUucG5n/1500/auto/85/notrim/a5d430b87e62adf9628996bb82b8f08a.webp',
-      // new images you wanted to add
       'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvcHJvZHVjdHMvdjIvMjEyZGFkNjUwOThlODE3YTU3OWU1N2RjZTc4ODJlYmUvcGxheXNpZGUucG5n/1500/auto/85/notrim/3bfc264eac375a625186ad117b086dff.webp',
       'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvcHJvZHVjdHMvdjIvYTAwMTk1ZDVkYTBlOTlhZWE0YTI2YWI2ZjVlZTJhYTgvcGxheXNpZGUucG5n/1500/auto/85/notrim/47b0335629938748f4f7968e3fa898ff.webp',
       'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvcHJvZHVjdHMvdjIvNzcyNWY0ZTQxMzg1NGIzMzM0Mzk2OTAzMjhiOTEzNDAvcGxheXNpZGUucG5n/1500/auto/85/notrim/19eaa3232667b12a0ec48eb8a8b44e89.webp',
@@ -95,25 +103,19 @@
       'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9rbmlmZV9rYXJhbWJpdF9hYV9mYWRlX2xpZ2h0LmZjZmRmMDBiOTM0OGNmN2UzODhkZDQ5ZjU5MzhmN2Y3M2IxYmM2NDMucG5n/auto/auto/85/notrim/ec842e2b016b13d7b89aef8bc789eebb.webp'
     ];
 
-    function spawnSkin() {
+    function createSkin() {
       const img = document.createElement('img');
       img.src = images[Math.floor(Math.random() * images.length)];
-      img.className = 'skin';
-      img.style.left = Math.random() * 100 + 'vw';
-      img.style.width = (Math.random() * 30 + 70) + 'px';
-      img.style.animationDuration = (Math.random() * 3 + 6) + 's';
-      img.style.transform = `rotate(${Math.random() * 360}deg)`;
-
+      img.classList.add('skin');
+      img.style.left = Math.random() * window.innerWidth + 'px';
       document.body.appendChild(img);
 
-      img.addEventListener('animationend', () => {
+      setTimeout(() => {
         img.remove();
-      });
+      }, 7000); // same as animation duration
     }
 
-    setInterval(() => {
-      spawnSkin();
-    }, 400);
+    setInterval(createSkin, 300);
   </script>
 
 </body>
