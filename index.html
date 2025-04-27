@@ -163,14 +163,17 @@
   </div>
 
   <script>
-    const images = [
-      'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9hazQ3X2FrX3BvcmNlbGFpbl9saWdodC5kYzRmNzZmYzM2NTE3NWU0YWM0MmQxNGVhODQ3MmQ3NmNmM2ZhNjYzLnBuZw--/auto/auto/85/notrim/66286698568f34224b86256f3790dbad.webp',
-      'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9hazQ3X2N1X2FrNDdfbmlnaHR3aXNoX2xpZ2h0LjA4YTY1NjE1ZDdjZGYyZjhkNGQ2NTBmOTk5OWZjOTQxNjlmZjg3MjgucG5n/auto/auto/85/notrim/5c08a9a697a566343389a078253f7fe3.webp',
-      'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9hazQ3X2N1X2FrNDdfYXNpaW1vdl9saWdodC4xZWMwMjRhOWVkMjE0NzE4MjUzOTA3NjM4MzFmZGNkNDE3NTA1Y2MwLnBuZw--/auto/auto/85/notrim/500cc78c57df4c739bccf978b38d8d83.webp',
-      'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9hd3BfYXdwX3ByaW50c3RyZWFtX2xpZ2h0LjRmYjJlNDY4NzdlZGEzNGJiYjdiZmNlODI5YTA0YjA2OTUyZmZkNjEucG5n/auto/auto/85/notrim/db5e0a74a4e2030a7840519acea25976.webp',
-      'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9hd3BfY3VfYXdwX2Nocm9tYV9waW5rX2xpZ2h0LjcwYWMzYTk1MDk3OGRiNWJlNzIwMDVjMWRiOGI3MTRmZjY2OTNhNDkucG5n/auto/auto/85/notrim/d7650a6bc5632b73dc72988ebad383fb.webp',
-      'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9hd3BfZ3VfYXdwX3ZpcnVzX2xpZ2h0LmE4NjQyM2UwYTVjMjUxMWM1MjIxNGNhOTQyYWU0ZGI4ODMyZDdmNGIucG5n/auto/auto/85/notrim/f27cd2339d20dfeeda9d07ccf7f9f4b9.webp'
-    ];
+   const images = [
+     'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9hazQ3X2FrX3BvcmNlbGFpbl9saWdodC5kYzRmNzZmYzM2NTE3NWU0YWM0MmQxNGVhODQ3MmQ3NmNmM2ZhNjYzLnBuZw--/auto/auto/85/notrim/66286698568f34224b86256f3790dbad.webp',
+     'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9hazQ3X2N1X2FrNDdfbmlnaHR3aXNoX2xpZ2h0LjA4YTY1NjE1ZDdjZGYyZjhkNGQ2NTBmOTk5OWZjOTQxNjlmZjg3MjgucG5n/auto/auto/85/notrim/5c08a9a697a566343389a078253f7fe3.webp',
+     'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9hazQ3X2N1X2FrNDdfYXNpaW1vdl9saWdodC4xZWMwMjRhOWVkMjE0NzE4MjUzOTA3NjM4MzFmZGNkNDE3NTA1Y2MwLnBuZw--/auto/auto/85/notrim/500cc78c57df4c739bccf978b38d8d83.webp',
+     'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9hd3BfYXdwX3ByaW50c3RyZWFtX2xpZ2h0LjRmYjJlNDY4NzdlZGEzNGJiYjdiZmNlODI5YTA0YjA2OTUyZmZkNjEucG5n/auto/auto/85/notrim/db5e0a74a4e2030a7840519acea25976.webp',
+     'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9tNGExX3NpbGVuY2VyX200YTFzX3ZhcG9yd2F2ZV9saWdodC4wMjg3NTYyZGE3MTNlZTJkNTMxZTVkNjRjZGE5ZDEzMzc4ZmYxYjQ4LnBuZw--/auto/auto/85/notrim/453c63acef1260b9b9c0d8a15535161a.webp',
+     'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9rbmlmZV9rYXJhbWJpdF9nc19rYXJhbV9hdXRvdHJvbmljX2xpZ2h0LjJiYzgxMTBmOTZjZjJmODc0YWZjYThjYWUyODFhOGNkM2NkMWVjOTUucG5n/auto/auto/85/notrim/96466ee4f9625d5f2a5406582101bd36.webp',
+     'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9rbmlmZV9rYXJhbWJpdF9hbl90aWdlcl9vcmFuZ2VfbGlnaHQuMTI5OGRiNWQwYjkwNzU4MGE0ZmRjMmY4ZGQzOWUxZjNhNjAwOTYzZC5wbmc-/auto/auto/85/notrim/e9129d1eabd9953f1c591c75200f52b9.webp',
+     'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9rbmlmZV9rYXJhbWJpdF9hYV9mYWRlX2xpZ2h0LmZjZmRmMDBiOTM0OGNmN2UzODhkZDQ5ZjU5MzhmN2Y3M2IxYmM2NDMucG5n/auto/auto/85/notrim/ec842e2b016b13d7b89aef8bc789eebb.webp'
+   ];
+
 
     function createSkin() {
       const skin = document.createElement('img');
