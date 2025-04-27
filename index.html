@@ -9,22 +9,24 @@
       overflow: hidden;
       background-color: #0d0d0d;
       font-family: Arial, sans-serif;
-      text-align: center;
       color: white;
       height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       position: relative;
+      text-align: center;
     }
 
     h1 {
-      margin-top: 100px;
       font-size: 48px;
-      position: relative;
       z-index: 10;
+      margin: 0;
     }
 
     .button-container {
       margin-top: 30px;
-      position: relative;
       z-index: 10;
     }
 
@@ -46,7 +48,7 @@
 
     .skin {
       position: absolute;
-      width: 80px; /* Slightly bigger */
+      width: 80px;
       animation: fallBounce 7s ease-in-out forwards;
       opacity: 0.85;
       z-index: 0;
@@ -55,13 +57,13 @@
 
     @keyframes fallBounce {
       0% {
-        transform: translateY(-200px) rotate(0deg); /* Start higher */
+        transform: translateY(-200px) rotate(0deg);
       }
       65% {
-        transform: translateY(70vh) rotate(180deg); /* Fall lower but bounce higher */
+        transform: translateY(70vh) rotate(180deg);
       }
       80% {
-        transform: translateY(58vh) rotate(270deg); /* Bounce visible */
+        transform: translateY(58vh) rotate(270deg);
       }
       100% {
         transform: translateY(75vh) rotate(360deg);
@@ -82,7 +84,15 @@
       'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvcHJvZHVjdHMvdjIvNzQwMmI0MTlkMDQwOGY3ZTU5N2VkNDNkOTUwN2U1ZTcvcGxheXNpZGUucG5n/1500/auto/85/notrim/4f194ee6f80d9295db05c9dbc27e7a80.webp',
       'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvcHJvZHVjdHMvdjIvNDUzNmQ2NGE0YmM2NDhhNGFkZGY4NTFiOTA2MjI0YzEvcGxheXNpZGUucG5n/1500/auto/85/notrim/61d85434d64da34eaec6c7a812bae2fd.webp',
       'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvcHJvZHVjdHMvdjIvZTQ4MzE0MzkwNjNjNzRmM2QwOTZkNWJlYWExODM3ZWIvcGxheXNpZGUucG5n/1500/auto/85/notrim/8582f396e3265f57389addc5f5414d86.webp',
-      'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvcHJvZHVjdHMvdjIvOTc4NTAxNmUzZWEzNmQwNzMwZjVhNDJkMDUwZWYwMGMvcGxheXNpZGUucG5n/1500/auto/85/notrim/a5d430b87e62adf9628996bb82b8f08a.webp'
+      'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvcHJvZHVjdHMvdjIvOTc4NTAxNmUzZWEzNmQwNzMwZjVhNDJkMDUwZWYwMGMvcGxheXNpZGUucG5n/1500/auto/85/notrim/a5d430b87e62adf9628996bb82b8f08a.webp',
+      // new images you wanted to add
+      'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvcHJvZHVjdHMvdjIvMjEyZGFkNjUwOThlODE3YTU3OWU1N2RjZTc4ODJlYmUvcGxheXNpZGUucG5n/1500/auto/85/notrim/3bfc264eac375a625186ad117b086dff.webp',
+      'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvcHJvZHVjdHMvdjIvYTAwMTk1ZDVkYTBlOTlhZWE0YTI2YWI2ZjVlZTJhYTgvcGxheXNpZGUucG5n/1500/auto/85/notrim/47b0335629938748f4f7968e3fa898ff.webp',
+      'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvcHJvZHVjdHMvdjIvNzcyNWY0ZTQxMzg1NGIzMzM0Mzk2OTAzMjhiOTEzNDAvcGxheXNpZGUucG5n/1500/auto/85/notrim/19eaa3232667b12a0ec48eb8a8b44e89.webp',
+      'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9rbmlmZV9rYXJhbWJpdF9jdV9rYXJhbV9sb3JlX2xpZ2h0LmY4Y2Y4MmY1NjA5NmViYjczNWU5N2RkYTBjM2VmMzIxMjg4MWM2MmMucG5n/auto/auto/85/notrim/cc0a01d5860dfa6fb63b409e73ecbcd2.webp',
+      'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9rbmlmZV9rYXJhbWJpdF9hbl90aWdlcl9vcmFuZ2VfbGlnaHQuMTI5OGRiNWQwYjkwNzU4MGE0ZmRjMmY4ZGQzOWUxZjNhNjAwOTYzZC5wbmc-/auto/auto/85/notrim/e9129d1eabd9953f1c591c75200f52b9.webp',
+      'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9rbmlmZV9rYXJhbWJpdF9hbV9tYXJibGVfZmFkZV9saWdodC40ZWJjMjI5YzBjOTNmMGMxYjUxZDQzOGEyOGY3MzZkN2VmYmZkYWI4LnBuZw--/auto/auto/85/notrim/2d17b5f918b463169a05c168dfa9dd2c.webp',
+      'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9rbmlmZV9rYXJhbWJpdF9hYV9mYWRlX2xpZ2h0LmZjZmRmMDBiOTM0OGNmN2UzODhkZDQ5ZjU5MzhmN2Y3M2IxYmM2NDMucG5n/auto/auto/85/notrim/ec842e2b016b13d7b89aef8bc789eebb.webp'
     ];
 
     function spawnSkin() {
@@ -90,8 +100,8 @@
       img.src = images[Math.floor(Math.random() * images.length)];
       img.className = 'skin';
       img.style.left = Math.random() * 100 + 'vw';
-      img.style.width = (Math.random() * 30 + 70) + 'px'; /* Bigger minimum size */
-      img.style.animationDuration = (Math.random() * 3 + 6) + 's'; /* Slightly longer fall time */
+      img.style.width = (Math.random() * 30 + 70) + 'px';
+      img.style.animationDuration = (Math.random() * 3 + 6) + 's';
       img.style.transform = `rotate(${Math.random() * 360}deg)`;
 
       document.body.appendChild(img);
