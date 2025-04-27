@@ -46,25 +46,25 @@
 
     .skin {
       position: absolute;
-      width: 60px;
-      animation: fallBounce 6s ease-in-out forwards;
-      opacity: 0.8;
+      width: 80px; /* Slightly bigger */
+      animation: fallBounce 7s ease-in-out forwards;
+      opacity: 0.85;
       z-index: 0;
       pointer-events: none;
     }
 
     @keyframes fallBounce {
       0% {
-        transform: translateY(-100px) rotate(0deg);
+        transform: translateY(-200px) rotate(0deg); /* Start higher */
       }
-      70% {
-        transform: translateY(75vh) rotate(180deg);
+      65% {
+        transform: translateY(70vh) rotate(180deg); /* Fall lower but bounce higher */
       }
-      85% {
-        transform: translateY(65vh) rotate(270deg);
+      80% {
+        transform: translateY(58vh) rotate(270deg); /* Bounce visible */
       }
       100% {
-        transform: translateY(80vh) rotate(360deg);
+        transform: translateY(75vh) rotate(360deg);
       }
     }
   </style>
@@ -90,8 +90,8 @@
       img.src = images[Math.floor(Math.random() * images.length)];
       img.className = 'skin';
       img.style.left = Math.random() * 100 + 'vw';
-      img.style.width = (Math.random() * 30 + 50) + 'px';
-      img.style.animationDuration = (Math.random() * 3 + 5) + 's';
+      img.style.width = (Math.random() * 30 + 70) + 'px'; /* Bigger minimum size */
+      img.style.animationDuration = (Math.random() * 3 + 6) + 's'; /* Slightly longer fall time */
       img.style.transform = `rotate(${Math.random() * 360}deg)`;
 
       document.body.appendChild(img);
@@ -101,10 +101,9 @@
       });
     }
 
-    // Instead of dropping all at once, make them rain
     setInterval(() => {
       spawnSkin();
-    }, 400); // every 0.4 seconds a new skin falls
+    }, 400);
   </script>
 
 </body>
