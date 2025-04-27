@@ -4,125 +4,139 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Trading Sites | CSSkinProfit</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
   <style>
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0d1117;
-      color: #c9d1d9;
-      padding: 20px;
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    .site {
-      margin: 20px 0;
-      padding: 20px;
-      border: 1px solid #30363d;
-      border-radius: 10px;
-      background: #161b22;
-      transition: transform 0.3s ease;
-    }
-    .site:hover {
-      transform: translateY(-5px);
-    }
-    .site a {
-      color: #58a6ff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .site a:hover {
-      text-decoration: underline;
-    }
-    .site-description {
-      margin-bottom: 20px;
-    }
-    .button-container {
-      text-align: center;
-    }
-    .button {
-      display: inline-block;
-      background: #ff4757;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background 0.3s;
-      margin-top: 10px;
-    }
-    .button:hover {
-      background: #e84118;
-    }
-    .back-button {
-      display: inline-block;
-      margin-top: 30px;
-      text-align: center;
-      background: #ff4757;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-    .back-button:hover {
-      background: #e84118;
-    }
-    footer {
-      margin-top: 50px;
-      text-align: center;
-      font-size: 12px;
-      color: #8b949e;
-    }
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  background: linear-gradient(135deg, #0d0d0d 0%, #1a1a2e 50%, #16213e 100%);
+  color: #ffffff;
+  padding: 40px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 50px;
+  color: #ff4757;
+  margin-bottom: 50px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.site {
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 15px;
+  background: #1e2431;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  max-width: 800px;
+  text-align: left;
+  overflow: hidden;
+}
+
+.site:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 25px rgba(255, 71, 87, 0.5);
+}
+
+.site h2 {
+  font-size: 32px;
+  color: #ff4757;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.site p {
+  font-size: 18px;
+  color: #c9d1d9;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.site a {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #ff6b81;
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.site a:hover {
+  background-color: #e84118;
+  transform: scale(1.05);
+}
+
+.back-button {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 12px 30px;
+  background: #ff4757;
+  color: white;
+  font-size: 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.back-button:hover {
+  background: #e84118;
+}
+
+footer {
+  margin-top: 50px;
+  font-size: 14px;
+  color: #8b949e;
+  text-align: center;
+}
+
+    /* Insert the CSS styling above here */
   </style>
 </head>
 <body>
 
-  <h1>Top Trading Sites</h1>
+  <h1>Trading Sites</h1>
 
-  <!-- Site 1: DMarket -->
+  <!-- First Site -->
   <div class="site">
     <h2>DMarket</h2>
-    <p class="site-description">DMarket is a highly reputable skin trading platform that allows players to buy, sell, and exchange CS:GO skins easily and securely. One of the main advantages of DMarket is its low fees, which make it more affordable compared to other platforms. Users can enjoy a seamless trading experience thanks to the user-friendly interface, and it also supports instant transactions. In addition to CS:GO skins, DMarket also includes other in-game items, making it a one-stop-shop for digital item trading. The platform ensures the highest security standards, with two-factor authentication (2FA) available to protect users' accounts and trades. DMarket also provides a mobile app for on-the-go trading, giving players the flexibility to trade skins wherever they are. By using DMarket, you can access exclusive deals and find some of the best prices on skins. If you’re looking to get the most out of your CS:GO skins, this platform is highly recommended for its competitive pricing and ease of use.</p>
-    <div class="button-container">
-      <a href="https://dmarket.com?ref=hseVSWrJt8" class="button">Try DMarket Now!</a>
-    </div>
+    <p>DMarket is one of the largest and most trusted marketplaces for trading skins. With low fees, a secure platform, and a wide variety of skins available, it’s a top choice for both novice and professional traders alike. The platform offers a seamless user experience, with fast transactions and a transparent pricing model. DMarket allows users to easily buy, sell, and trade in-game items, and supports various popular games, including CS:GO. The affiliate program is also a great way to earn commissions by referring new users.</p>
+    <a href="https://dmarket.com?ref=hseVSWrJt8" target="_blank">Try DMarket Now!</a>
   </div>
 
-  <!-- Site 2: White Market -->
+  <!-- Second Site -->
   <div class="site">
     <h2>White Market</h2>
-    <p class="site-description">White Market is a growing platform that specializes in providing a safe and secure environment for trading CS:GO skins. It is especially popular among traders who are looking for a simple and effective way to buy and sell items. One of White Market’s standout features is its strong emphasis on security and transparency, ensuring that all trades are fair and reliable. Users can quickly and easily navigate the platform, thanks to its clean, no-frills interface. This makes it an ideal option for both beginners and seasoned traders. White Market also boasts low transaction fees, allowing traders to maximize their profits. With an increasing variety of skins available and a rapidly expanding user base, this platform is becoming a go-to choice for many. The platform also offers a referral program, allowing users to earn rewards by inviting others to join. If you’re looking for a fast, secure, and easy-to-use skin trading platform, White Market is an excellent option that combines affordability with reliability.</p>
-    <div class="button-container">
-      <a href="https://white.market/invite/bcbe14c5666f8135" class="button">Try White Market Now!</a>
-    </div>
+    <p>White Market is an advanced, peer-to-peer marketplace for trading skins. Known for its secure transactions and wide range of game skins, White Market offers a highly reliable platform with minimal fees. Their user interface is simple and intuitive, making it easy to list, buy, and sell items. The platform’s security is top-notch, ensuring that users can trade without fear of scams or fraud. With strong community support and continuous improvements, White Market is perfect for those looking for a safe trading experience.</p>
+    <a href="https://white.market/invite/bcbe14c5666f8135" target="_blank">Try White Market Now!</a>
   </div>
 
-  <!-- Site 3: GamerPay -->
+  <!-- Third Site -->
   <div class="site">
     <h2>GamerPay</h2>
-    <p class="site-description">GamerPay is an innovative platform designed to offer gamers a reliable and secure way to trade CS:GO skins. What sets GamerPay apart from other platforms is its focus on quick transactions and a streamlined process that lets users trade skins without unnecessary delays. The platform supports instant deposits and withdrawals, making it ideal for those looking to make fast trades. GamerPay also guarantees security through its advanced anti-fraud systems, protecting users from scams and unsafe transactions. The platform is designed with a user-friendly interface that allows both beginners and experienced traders to easily buy and sell skins. One of the most attractive features of GamerPay is its competitive prices, giving users access to skins at rates that are often better than those of other platforms. Whether you’re a casual player or a professional trader, GamerPay offers a simple yet effective way to get the most out of your CS:GO skins. With its combination of speed, security, and fair pricing, GamerPay is a top choice for anyone serious about skin trading.</p>
-    <div class="button-container">
-      <a href="https://gamerpay.gg/partner/6539fbda40" class="button">Try GamerPay Now!</a>
-    </div>
+    <p>GamerPay is an innovative skin trading platform that simplifies the buying and selling process. It focuses on providing a hassle-free experience with low transaction fees, quick payouts, and secure trading. GamerPay is perfect for traders who want to avoid the complicated processes and high costs of traditional platforms. They also offer a partner program for users looking to earn extra income. With an easy-to-use interface and high levels of security, GamerPay ensures that both buyers and sellers can complete their transactions smoothly.</p>
+    <a href="https://gamerpay.gg/partner/6539fbda40" target="_blank">Try GamerPay Now!</a>
   </div>
 
-  <!-- Site 4: SkinSwap -->
+  <!-- Fourth Site -->
   <div class="site">
     <h2>SkinSwap</h2>
-    <p class="site-description">SkinSwap is a fast and user-friendly platform that specializes in providing users with the ability to swap CS:GO skins in real-time. Unlike other skin trading platforms that involve lengthy processes, SkinSwap focuses on simplicity and speed. The platform enables users to instantly swap skins without the hassle of waiting for a trade confirmation or dealing with lengthy negotiations. SkinSwap’s interface is intuitive, making it easy for both beginners and experienced traders to navigate. Additionally, the platform offers a wide selection of skins, and users can find competitive prices for a variety of items. SkinSwap also features an active community, which can be helpful for those looking to learn more about skin trading or find other traders with similar interests. The site provides a safe and secure environment for users, with regular security updates and a dedicated support team to help resolve any issues. Whether you’re looking to trade a single skin or make multiple swaps, SkinSwap offers one of the fastest and most reliable ways to get your trades done quickly.</p>
-    <div class="button-container">
-      <a href="https://steamcommunity.com/tradeoffer/new/?partner=1241432713&token=HhQdMATm" class="button">Try SkinSwap Now!</a>
-    </div>
+    <p>SkinSwap offers a fast and reliable platform for trading skins. Known for its streamlined trading process and competitive pricing, SkinSwap is an excellent choice for players looking to quickly swap their skins for something else. The site also provides a marketplace for buying and selling skins, along with an easy-to-navigate interface. SkinSwap stands out for its transparent pricing, low fees, and frequent promotions. If you’re looking for a hassle-free trading experience with an emphasis on value, SkinSwap is the way to go.</p>
+    <a href="https://steamcommunity.com/tradeoffer/new/?partner=1241432713&token=HhQdMATm" target="_blank">Try SkinSwap Now!</a>
   </div>
 
-  <!-- Site 5: Shadowpay -->
+  <!-- Fifth Site -->
   <div class="site">
-    <h2>Shadowpay</h2>
-    <p class="site-description">Shadowpay is a trading platform dedicated to providing gamers with an easy and secure way to buy and sell CS:GO skins. What sets Shadowpay apart is its focus on safety and reliability, with an emphasis on user protection and fraud prevention. The platform’s interface is straightforward and easy to use, making it accessible for both new users and seasoned traders. Shadowpay offers one of the most secure trading experiences, featuring a two-factor authentication (2FA) option and a detailed tracking system for each transaction. In addition, users can enjoy competitive prices on a wide range of skins, with frequent promotions and discounts available for those who trade regularly. Shadowpay also integrates with various payment methods, ensuring that you can make deposits and withdrawals easily. If you’re looking for a trustworthy platform with low fees and top-tier security, Shadowpay is an excellent choice for both casual players and experienced traders alike. With its commitment to security and ease of use, Shadowpay is quickly becoming one of the most popular skin trading platforms on the market.</p>
-    <div class="button-container">
-      <a href="https://shadowpay.com?utm_campaign=JQKcCMCzAifqSZH" class="button">Try Shadowpay Now!</a>
-    </div>
+    <h2>ShadowPay</h2>
+    <p>ShadowPay is a fast-growing platform known for its low fees and robust features for skin trading. With a wide range of skins and an intuitive trading system, ShadowPay makes the buying and selling process incredibly easy. It also allows users to trade directly via their Steam accounts, reducing the risk of scams. With great customer service, secure transactions, and low fees, ShadowPay ensures that users have a smooth experience when trading their skins. ShadowPay’s affiliate program also offers great opportunities to earn by referring new users.</p>
+    <a href="https://shadowpay.com?utm_campaign=JQKcCMCzAifqSZH" target="_blank">Try ShadowPay Now!</a>
   </div>
 
   <div style="text-align: center;">
@@ -130,7 +144,7 @@
   </div>
 
   <footer>
-    Trading sites and offers are subject to change. Always double-check item values before trading.
+    Prices and trading sites are subject to change. Always double-check item values before trading.
   </footer>
 
 </body>
