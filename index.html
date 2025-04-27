@@ -3,7 +3,152 @@
 <head>
   <meta charset="UTF-8">
   <title>CS Skin Profit</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0d0d0d 0%, #1a1a2e 50%, #16213e 100%);
+      font-family: 'Poppins', Arial, sans-serif;
+      color: white;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      position: relative;
+    }
+
+    /* Background Glow Around Edges */
+    body::before {
+      content: "";
+      position: absolute;
+      top: -100px;
+      left: -100px;
+      right: -100px;
+      bottom: -100px;
+      background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Light beams */
+    .beam {
+      position: absolute;
+      width: 300px;
+      height: 100%;
+      background: linear-gradient(120deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 100%);
+      animation: moveBeam 20s linear infinite;
+      transform: rotate(20deg);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @keyframes moveBeam {
+      0% {
+        left: -400px;
+        opacity: 0.2;
+      }
+      50% {
+        left: 100%;
+        opacity: 0.05;
+      }
+      100% {
+        left: -400px;
+        opacity: 0.2;
+      }
+    }
+
+    h1 {
+      font-size: 60px;
+      margin-bottom: 40px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      position: relative;
+      z-index: 10;
+      background: linear-gradient(90deg, #ff4757, #ffa502);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .button-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      z-index: 10;
+      position: relative;
+    }
+
+    .button {
+      background: linear-gradient(135deg, #ff4757, #e84118);
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 12px;
+      font-size: 22px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: bold;
+      box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
+    }
+
+    .button:hover {
+      background: linear-gradient(135deg, #e84118, #ff6b81);
+      box-shadow: 0 6px 20px rgba(255, 107, 129, 0.6);
+      transform: scale(1.05);
+    }
+
+    .skin {
+      position: absolute;
+      width: 80px;
+      animation: fallBounce 7s ease-in-out forwards;
+      opacity: 0.85;
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    @keyframes fallBounce {
+      0% {
+        transform: translateY(-300px) rotate(0deg);
+      }
+      65% {
+        transform: translateY(70vh) rotate(180deg);
+      }
+      80% {
+        transform: translateY(58vh) rotate(270deg);
+      }
+      100% {
+        transform: translateY(75vh) rotate(360deg);
+      }
+    }
+
+    .particle {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      width: 6px;
+      height: 6px;
+      animation: floatParticle linear infinite;
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    @keyframes floatParticle {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.5;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) scale(0.8);
+        opacity: 0;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -13,57 +158,31 @@
 
   <h1>Welcome to CS Skin Profit</h1>
   <div class="button-container">
-    <!-- Now they are clickable links -->
-    <a href="gambling.html" class="button">Gambling Sites</a>
-    <a href="trading.html" class="button">Trading Sites</a>
-  </div>
-
-  <!-- Navigation links (you can keep this section or remove it if it's unnecessary) -->
-  <div class="nav-links">
-    <a href="gambling.html">Gambling Sites</a>
-    <a href="trading.html">Trading Sites</a>
+    <button class="button"><a href="gambling.html" style="color: white; text-decoration: none;">Gambling Sites</a></button>
+    <button class="button"><a href="trading.html" style="color: white; text-decoration: none;">Trading Sites</a></button>
   </div>
 
   <script>
     const images = [
-      'images/AK-47 Asiimov.jpg',
-      'images/AK-47 Ice Coaled.jpg',
-      'images/Ak-47 Inheritance.jpg',
-      'images/Awp Asiimov.jpg',
-      'images/Awp Green Energy.jpg',
-      'images/Karambit lore.jpg',
-      'images/Karambit Marble Fade.jpg',
-      'images/Karambit Tigertooth.jpg',
+      'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9hazQ3X2FrX3BvcmNlbGFpbl9saWdodC5kYzRmNzZmYzM2NTE3NWU0YWM0MmQxNGVhODQ3MmQ3NmNmM2ZhNjYzLnBuZw--/auto/auto/85/notrim/66286698568f34224b86256f3790dbad.webp',
+      'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9hazQ3X2N1X2FrNDdfbmlnaHR3aXNoX2xpZ2h0LjA4YTY1NjE1ZDdjZGYyZjhkNGQ2NTBmOTk5OWZjOTQxNjlmZjg3MjgucG5n/auto/auto/85/notrim/5c08a9a697a566343389a078253f7fe3.webp',
+      'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9hazQ3X2N1X2FrNDdfYXNpaW1vdl9saWdodC4xZWMwMjRhOWVkMjE0NzE4MjUzOTA3NjM4MzFmZGNkNDE3NTA1Y2MwLnBuZw--/auto/auto/85/notrim/500cc78c57df4c739bccf978b38d8d83.webp',
+      'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9hd3BfYXdwX3ByaW50c3RyZWFtX2xpZ2h0LjRmYjJlNDY4NzdlZGEzNGJiYjdiZmNlODI5YTA0YjA2OTUyZmZkNjEucG5n/auto/auto/85/notrim/db5e0a74a4e2030a7840519acea25976.webp',
+      'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9hd3BfY3VfYXdwX2Nocm9tYV9waW5rX2xpZ2h0LjcwYWMzYTk1MDk3OGRiNWJlNzIwMDVjMWRiOGI3MTRmZjY2OTNhNDkucG5n/auto/auto/85/notrim/d7650a6bc5632b73dc72988ebad383fb.webp',
+      'https://cdn.csgoskins.gg/public/uih/items/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvYnVja2V0cy9lY29uL2RlZmF1bHRfZ2VuZXJhdGVkL3dlYXBvbl9hd3BfZ3VfYXdwX3ZpcnVzX2xpZ2h0LmE4NjQyM2UwYTVjMjUxMWM1MjIxNGNhOTQyYWU0ZGI4ODMyZDdmNGIucG5n/auto/auto/85/notrim/f27cd2339d20dfeeda9d07ccf7f9f4b9.webp'
     ];
 
     function createSkin() {
-      const img = document.createElement('img');
-      img.src = images[Math.floor(Math.random() * images.length)];
-      img.classList.add('skin');
-      img.style.left = Math.random() * window.innerWidth + 'px';
-      document.body.appendChild(img);
-
-      setTimeout(() => {
-        img.remove();
-      }, 7000);
+      const skin = document.createElement('img');
+      skin.src = images[Math.floor(Math.random() * images.length)];
+      skin.classList.add('skin');
+      skin.style.left = Math.random() * window.innerWidth + 'px';
+      skin.style.animationDuration = 2 + Math.random() * 3 + 's';
+      document.body.appendChild(skin);
+      setTimeout(() => skin.remove(), 7000);
     }
 
-    function createParticle() {
-      const particle = document.createElement('div');
-      particle.classList.add('particle');
-      particle.style.left = Math.random() * window.innerWidth + 'px';
-      particle.style.top = Math.random() * window.innerHeight + 'px';
-      particle.style.animationDuration = (5 + Math.random() * 5) + 's';
-      document.body.appendChild(particle);
-
-      setTimeout(() => {
-        particle.remove();
-      }, 10000);
-    }
-
-    setInterval(createSkin, 300);
-    setInterval(createParticle, 200);
+    setInterval(createSkin, 500);
   </script>
-
 </body>
 </html>
