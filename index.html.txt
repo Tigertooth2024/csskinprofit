@@ -187,8 +187,8 @@
 
     setInterval(createSkin, 500);
   
-src="https://vercel.com/analytics/script.js" defer>
 </script>
+<script defer src="https://vercel.com/analytics/script.js"></script>
 
 </body>
 </html>
