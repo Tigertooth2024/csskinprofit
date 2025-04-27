@@ -55,20 +55,20 @@
       pointer-events: none;
     }
 
-    @keyframes fallBounce {
+   @keyframes fallBounce {
       0% {
-        transform: translateY(-200px) rotate(0deg);
+        transform: translateY(-500px) rotate(0deg); /* Start much higher off-screen */
       }
       65% {
-        transform: translateY(70vh) rotate(180deg);
+        transform: translateY(70vh) rotate(180deg); /* Fall lower but bounce higher */
       }
       80% {
-        transform: translateY(58vh) rotate(270deg);
+        transform: translateY(58vh) rotate(270deg); /* Bounce up slightly */
       }
-      100% {
+     100% {
         transform: translateY(75vh) rotate(360deg);
       }
-    }
+}
   </style>
 </head>
 <body>
