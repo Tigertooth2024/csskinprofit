@@ -12,15 +12,20 @@
       text-align: center;
       color: white;
       height: 100vh;
+      position: relative;
     }
 
     h1 {
       margin-top: 100px;
       font-size: 48px;
+      position: relative;
+      z-index: 10;
     }
 
     .button-container {
       margin-top: 30px;
+      position: relative;
+      z-index: 10;
     }
 
     .button {
@@ -42,14 +47,20 @@
     .skin {
       position: absolute;
       width: 80px;
-      animation: fall linear infinite;
-      opacity: 0.8;
+      animation: fallBounce linear;
+      opacity: 0.85;
       z-index: 0;
     }
 
-    @keyframes fall {
+    @keyframes fallBounce {
       0% {
         transform: translateY(-150px) rotate(0deg);
+      }
+      70% {
+        transform: translateY(80vh) rotate(180deg);
+      }
+      85% {
+        transform: translateY(70vh) rotate(270deg);
       }
       100% {
         transform: translateY(110vh) rotate(360deg);
@@ -67,10 +78,10 @@
 
   <script>
     const images = [
-      'https://steamuserimages-a.akamaihd.net/ugc/788622967207697735/2E7F493BAF5E6A8A4B15415E6B7E914E5076A01F/', // AWP Dragon Lore
-      'https://steamuserimages-a.akamaihd.net/ugc/948469983530689891/8DC76BCF58A86D0DC7C5E70D1F68F0A881F91663/', // AK-47 Fire Serpent
-      'https://steamuserimages-a.akamaihd.net/ugc/1789609197749775760/7E07D3E52D1CE11D8F4DAD214B5E6FBE97757F99/', // M4A4 Howl
-      'https://steamuserimages-a.akamaihd.net/ugc/1817763600771358210/9CB7D3B8F7DE2CB85E429DC905D4D93F313BC7D7/'  // Desert Eagle Blaze
+      'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvcHJvZHVjdHMvdjIvNzQwMmI0MTlkMDQwOGY3ZTU5N2VkNDNkOTUwN2U1ZTcvcGxheXNpZGUucG5n/1500/auto/85/notrim/4f194ee6f80d9295db05c9dbc27e7a80.webp'
+      'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvcHJvZHVjdHMvdjIvNDUzNmQ2NGE0YmM2NDhhNGFkZGY4NTFiOTA2MjI0YzEvcGxheXNpZGUucG5n/1500/auto/85/notrim/61d85434d64da34eaec6c7a812bae2fd.webp'
+      'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvcHJvZHVjdHMvdjIvZTQ4MzE0MzkwNjNjNzRmM2QwOTZkNWJlYWExODM3ZWIvcGxheXNpZGUucG5n/1500/auto/85/notrim/8582f396e3265f57389addc5f5414d86.webp'
+      'https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvcHJvZHVjdHMvdjIvOTc4NTAxNmUzZWEzNmQwNzMwZjVhNDJkMDUwZWYwMGMvcGxheXNpZGUucG5n/1500/auto/85/notrim/a5d430b87e62adf9628996bb82b8f08a.webp'
     ];
 
     for (let i = 0; i < 20; i++) {
@@ -78,7 +89,8 @@
       img.src = images[Math.floor(Math.random() * images.length)];
       img.className = 'skin';
       img.style.left = Math.random() * 100 + 'vw';
-      img.style.animationDuration = (Math.random() * 5 + 5) + 's';
+      img.style.animationDuration = (Math.random() * 5 + 8) + 's';
+      img.style.animationTimingFunction = 'ease-in-out';
       document.body.appendChild(img);
     }
   </script>
