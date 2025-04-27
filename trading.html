@@ -4,32 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Trading Sites | CSSkinProfit</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Poppins', Arial, sans-serif;
-      background: linear-gradient(135deg, #0d1117 20%, #1a1a2e 50%, #16213e 100%);
+      background: linear-gradient(135deg, #0d0d0d 0%, #1a1a2e 50%, #16213e 100%);
       color: #ffffff;
       padding: 40px;
       text-align: center;
-      background-size: 400% 400%;
-      animation: gradientAnimation 8s ease infinite;
-      overflow-y: auto; /* Allow vertical scrolling */
+      overflow-x: hidden;
+      position: relative;
     }
-
-    @keyframes gradientAnimation {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
+    .rain {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 100%; width: 100%;
+      pointer-events: none;
+      z-index: -1;
     }
-
+    .rain img {
+      position: absolute;
+      width: 60px;
+      animation: fall 3s infinite linear;
+    }
+    @keyframes fall {
+      0% { top: -100px; }
+      100% { top: 100%; }
+    }
+    .site {
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 15px;
+      background: #1e2431;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      max-width: 800px;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
     h1 {
       font-size: 50px;
       color: #ff4757;
@@ -37,41 +52,40 @@
       font-weight: 900;
       letter-spacing: 2px;
       text-transform: uppercase;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
     }
-
-    .site {
-      margin: 30px auto;
-      padding: 30px;
-      border-radius: 15px;
-      background: #1e2431;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-      max-width: 800px;
-      text-align: left;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .site:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 25px rgba(255, 71, 87, 0.5);
-    }
-
-    .site h2 {
+    h2 {
       font-size: 32px;
       color: #ff4757;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
       font-weight: bold;
     }
-
+    .rating {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+    .star {
+      font-size: 22px;
+      display: inline-block;
+      color: #ffd700;
+      position: relative;
+    }
+    .star.empty {
+      color: #444;
+    }
+    .star.half::before {
+      content: "★";
+      position: absolute;
+      width: 50%;
+      overflow: hidden;
+      color: #ffd700;
+    }
     .site p {
       font-size: 18px;
       color: #c9d1d9;
       line-height: 1.6;
       margin-bottom: 20px;
     }
-
     .site a {
       display: inline-block;
       padding: 12px 25px;
@@ -83,12 +97,10 @@
       font-weight: bold;
       transition: background-color 0.3s ease, transform 0.3s ease;
     }
-
     .site a:hover {
       background-color: #e84118;
       transform: scale(1.05);
     }
-
     .back-button {
       display: inline-block;
       margin-top: 40px;
@@ -101,80 +113,204 @@
       font-weight: bold;
       transition: background 0.3s ease;
     }
-
     .back-button:hover {
       background: #e84118;
     }
-
     footer {
       margin-top: 50px;
       font-size: 14px;
       color: #8b949e;
-      text-align: center;
     }
-
-    .site-logo {
-      width: 40px;
+    .site img {
+      max-width: none;
+    }
+    .site-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 10px;
+    }
+    .site-header img {
+      max-width: 50px;
       height: auto;
-      margin-right: 15px;
     }
+    .background-images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -2; /* Behind rain but above the gradient background */
+}
+
+.bg-img {
+  position: absolute;
+  filter: brightness(2) blur(1px);
+  opacity: 1;
+  transform: scale(1.4);
+  pointer-events: none;
+}
+
+/* Individual placement and rotation for each image */
+.img1 {
+  top: 400px;
+  left: 40px;
+  width: 700px;
+  transform: rotate(-10deg) scale(1.2);
+  animation: float1 14s ease-in-out infinite;
+}
+
+.img2 {
+  bottom: 300px;
+  right: 100px;
+  width: 600px;
+  transform: rotate(15deg) scale(1);
+  animation: float2 18s ease-in-out infinite;
+}
+
+.img3 {
+  top: 320px;
+  right: 50px;
+  width: 800px;
+  transform: rotate(0deg) scale(1);
+  animation: float3 16s ease-in-out infinite;
+}
+
+.img4 {
+  bottom: 715px;
+  left: 40px;
+  width: 600px;
+  transform: rotate(-5deg) scale(1.1);
+  animation: float4 20s ease-in-out infinite;
+}
+
+@keyframes float1 {
+  0% { transform: translate(0, 0) rotate(-10deg) scale(1.2); }
+  50% { transform: translate(10px, 10px) rotate(-8deg) scale(1.2); }
+  100% { transform: translate(0, 0) rotate(-10deg) scale(1.2); }
+}
+
+@keyframes float2 {
+  0% { transform: translate(0, 0) rotate(15deg) scale(1); }
+  50% { transform: translate(-15px, 5px) rotate(18deg) scale(1); }
+  100% { transform: translate(0, 0) rotate(15deg) scale(1); }
+}
+
+@keyframes float3 {
+  0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  50% { transform: translate(5px, -5px) rotate(3deg) scale(1); }
+  100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+}
+
+@keyframes float4 {
+  0% { transform: translate(0, 0) rotate(-5deg) scale(1.1); }
+  50% { transform: translate(-10px, 5px) rotate(-2deg) scale(1.1); }
+  100% { transform: translate(0, 0) rotate(-5deg) scale(1.1); }
+}
+
+.main-header {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  animation: fadeIn 1.5s ease;
+}
+
+.site-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 52px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #ff4d4d, #ffa502);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(255,77,77,0.7);
+  margin-bottom: 10px;
+}
+
+.separator {
+  width: 150px;
+  height: 4px;
+  margin: 10px auto 20px auto;
+  background: linear-gradient(90deg, #ff4d4d, #ffa502);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(255,77,77,0.7);
+}
+
+.page-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 2px;
+  text-shadow: 0 0 5px rgba(255,255,255,0.5);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 
   </style>
 </head>
 <body>
 
-  <h1>Trading Sites</h1>
-
-  <!-- First Site -->
-  <div class="site" style="background: #2c3e50;">
-    <div style="display: flex; align-items: center;">
-      <img src="https://cdn-mp.dmarket.com/prod/v1-17-12/assets/img/dm-ua-logo.png" class="site-logo" alt="DMarket Logo">
-      <h2>DMarket</h2>
-    </div>
-    <p>DMarket is one of the largest and most trusted marketplaces for trading skins. With low fees, a secure platform, and a wide variety of skins available, it’s a top choice for both novice and professional traders alike. The platform offers a seamless user experience, with fast transactions and a transparent pricing model. DMarket allows users to easily buy, sell, and trade in-game items, and supports various popular games, including CS:GO. The affiliate program is also a great way to earn commissions by referring new users.</p>
-    <a href="https://dmarket.com?ref=hseVSWrJt8" target="_blank">Try DMarket Now!</a>
+  <div class="main-header">
+    <h1 class="site-title">CS Skin Profit</h1>
+    <div class="separator"></div>
+    <h2 class="page-title">Trading Sites</h2>
   </div>
 
-  <!-- Second Site -->
-  <div class="site" style="background: #34495e;">
-    <div style="display: flex; align-items: center;">
-      <img src="https://pricempire.com/assets/providers/whitemarket_icon.webp" class="site-logo" alt="White Market Logo">
-      <h2>White Market</h2>
-    </div>
-    <p>White Market is an advanced, peer-to-peer marketplace for trading skins. Known for its secure transactions and wide range of game skins, White Market offers a highly reliable platform with minimal fees. Their user interface is simple and intuitive, making it easy to list, buy, and sell items. The platform’s security is top-notch, ensuring that users can trade without fear of scams or fraud. With strong community support and continuous improvements, White Market is perfect for those looking for a safe trading experience.</p>
-    <a href="https://white.market/invite/bcbe14c5666f8135" target="_blank">Try White Market Now!</a>
-  </div>
+  
 
-  <!-- Third Site -->
-  <div class="site" style="background: #7f8c8d;">
-    <div style="display: flex; align-items: center;">
-      <img src="https://gamerpay.gg/img/logo_dark.png" class="site-logo" alt="GamerPay Logo">
-      <h2>GamerPay</h2>
-    </div>
-    <p>GamerPay is an innovative skin trading platform that simplifies the buying and selling process. It focuses on providing a hassle-free experience with low transaction fees, quick payouts, and secure trading. GamerPay is perfect for traders who want to avoid the complicated processes and high costs of traditional platforms. They also offer a partner program for users looking to earn extra income. With an easy-to-use interface and high levels of security, GamerPay ensures that both buyers and sellers can complete their transactions smoothly.</p>
-    <a href="https://gamerpay.gg/partner/6539fbda40" target="_blank">Try GamerPay Now!</a>
-  </div>
+  <div class="rain" id="rain"></div>
 
-  <!-- Fourth Site -->
-  <div class="site" style="background: #16a085;">
-    <div style="display: flex; align-items: center;">
-      <img src="https://pricempire.com/assets/providers/skinswap_icon.webp" class="site-logo" alt="SkinSwap Logo">
-      <h2>SkinSwap</h2>
-    </div>
-    <p>SkinSwap offers a fast and reliable platform for trading skins. Known for its streamlined trading process and competitive pricing, SkinSwap is an excellent choice for players looking to quickly swap their skins for something else. The site also provides a marketplace for buying and selling skins, along with an easy-to-navigate interface. SkinSwap stands out for its transparent pricing, low fees, and frequent promotions. If you’re looking for a hassle-free trading experience with an emphasis on value, SkinSwap is the way to go.</p>
-    <a href="https://skinswap.com/r/csskinprofit" target="_blank">Try SkinSwap Now!</a>
-    <p><strong>Get a free skin up to $50 with the code <span style="color: #ff4757;">csskinprofit</span>!</strong></p>
-  </div>
+<div class="background-images">
+  <img src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FABz7PLfYQJK9diklb-GkvP9JrafxTNXupwnjLiRp4_wiVa1rRFqYGulI9Cdd1U5NF-C_QToxOrrhZ_qvoOJlyWNw2r79w" class="bg-img img1">
+  <img src="https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvcHJvZHVjdHMvYzVjZWRlYmY2YTU2ZjRjNWYzNDNkZWZhY2E5MzZiZWUvYmFja3NpZGUucG5n/1500/auto/85/notrim/ec00434296d2d97156c19ecf6d825edb.png" class="bg-img img2">
+  <img src="https://steamuserimages-a.akamaihd.net/ugc/2448359926406899872/17B17F2F3885288C056AD13376E7970C122823F5/" class="bg-img img3">
+  <img src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposr-kLAtl7PTbTjlH7du6kb-Nkvn6NrjummJW4NFOhujT8om70QawqRc9ZGqmcNXGdFNsZ1jS-Ae_l-7tgZ7v7pzAyXRg7icj5XiMzgv3308Gn6NOEA" class="bg-img img4">
+</div>
 
-  <!-- Fifth Site -->
-  <div class="site" style="background: #8e44ad;">
-    <div style="display: flex; align-items: center;">
-      <img src="https://shadowpay.com/images/origin/icons/logo.svg" class="site-logo" alt="ShadowPay Logo">
-      <h2>ShadowPay</h2>
-    </div>
-    <p>ShadowPay is a fast-growing platform known for its low fees and robust features for skin trading. With a wide range of skins and an intuitive trading system, ShadowPay makes the buying and selling process incredibly easy. It also allows users to trade directly via their Steam accounts, reducing the risk of scams. With great customer service, secure transactions, and low fees, ShadowPay ensures that users have a smooth experience when trading their skins. ShadowPay’s affiliate program also offers great opportunities to earn by referring new users.</p>
-    <a href="https://shadowpay.com?utm_campaign=JQKcCMCzAifqSZH" target="_blank">Try ShadowPay Now!</a>
-  </div>
+
+  <!-- Trading Sites -->
+<div class="site">
+  <img src="https://cdn-mp.dmarket.com/prod/v1-17-12/assets/img/dm-ua-logo.png" alt="DMarket Logo" style="width: 120px; margin-right: 20px; vertical-align: middle;">
+  <h2 style="color: white; display: inline-block;">DMarket</h2>
+  <div id="rating-dmarket" class="rating"></div>
+  <p>DMarket is one of the largest and most trusted marketplaces for trading skins. With low fees, a secure platform, and a wide variety of skins available, it’s a top choice for both novice and professional traders alike.</p>
+  <a href="https://dmarket.com?ref=hseVSWrJt8" target="_blank">Try DMarket Now!</a>
+</div>
+
+<div class="site">
+  <img src="https://pricempire.com/assets/providers/whitemarket_icon.webp" alt="WhiteMarket Logo" style="width: 120px; margin-right: 20px; vertical-align: middle;">
+  <h2 style="color: white; display: inline-block;">WhiteMarket</h2>
+  <div id="rating-whitemarket" class="rating"></div>
+  <p>WhiteMarket offers a clean interface and a reliable trading experience. With multiple payment options, it’s a solid platform for traders looking to buy and sell skins in a safe environment.</p>
+  <a href="https://whitemarket.com?ref=csskinprofit" target="_blank">Try WhiteMarket Now!</a>
+</div>
+
+<div class="site">
+  <img src="https://gamerpay.gg/img/logo_dark.png" alt="GamerPay Logo" style="width: 300px; margin-right: 20px; vertical-align: middle;">
+  <div id="rating-gamerpay" class="rating"></div>
+  <p>GamerPay provides a straightforward, fast payment system with competitive rates for gamers. Whether you’re trading skins or looking for other in-game assets, this platform delivers a smooth experience.</p>
+  <a href="https://gamerpay.gg?ref=csskinprofit" target="_blank">Try GamerPay Now!</a>
+</div>
+
+<div class="site">
+  <img src="https://shadowpay.com/images/origin/icons/logo.svg" alt="ShadowPay Logo" style="width: 300px; margin-right: 20px; vertical-align: middle;">
+  <div id="rating-shadowpay" class="rating"></div>
+  <p>ShadowPay offers easy trading for gamers and is widely known for its fast and secure transactions. With a streamlined interface, it's a great choice for anyone trading skins or looking for instant payments.</p>
+  <a href="https://shadowpay.com?ref=csskinprofit" target="_blank">Try ShadowPay Now!</a>
+</div>
+
+<div class="site">
+  <img src="https://pricempire.com/assets/providers/skinswap_icon.webp" alt="SkinSwap Logo" style="width: 120px; margin-right: 20px; vertical-align: middle;">
+  <h2 style="color: white; display: inline-block;">SkinSwap</h2>
+  <div id="rating-skinswap" class="rating"></div>
+  <p>SkinSwap has a reputation for its user-friendly interface, allowing gamers to quickly trade their skins. The platform offers competitive prices and a wide selection, making it an excellent choice for trading.</p>
+  <a href="https://skinswap.com/r/csskinprofit" target="_blank">Get a free skin up to $50 with the code csskinprofit!</a>
+</div>
 
   <div style="text-align: center;">
     <a href="index.html" class="back-button">⬅️ Back to Home</a>
@@ -183,6 +319,47 @@
   <footer>
     Prices and trading sites are subject to change. Always double-check item values before trading.
   </footer>
+
+  <script>
+    const ratings = {
+      'rating-dmarket': { score: 4.5, reviews: 19714 },
+      'rating-whitemarket': { score: 3.5, reviews: 40 },
+      'rating-gamerpay': { score: 4.0, reviews: 1397 },
+      'rating-shadowpay': { score: 3.5, reviews: 712 },
+      'rating-skinswap': { score: 5.0, reviews: 1392 }
+    };
+
+    function renderStars(id, ratingData) {
+      const container = document.getElementById(id);
+      if (!container) return;
+
+      let rating = ratingData.score;
+      const reviews = ratingData.reviews;
+
+      const fullStars = Math.floor(rating);
+      let halfStar = (rating % 1) >= 0.5;
+      const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+
+      container.innerHTML = '';
+
+      for (let i = 0; i < 5; i++) {
+        if (i < fullStars) {
+          container.innerHTML += '<span class="star">&#9733;</span>';
+        } else if (halfStar) {
+          container.innerHTML += '<span class="star half">&#9733;</span>';
+          halfStar = false;
+        } else {
+          container.innerHTML += '<span class="star empty">&#9733;</span>';
+        }
+      }
+
+      container.innerHTML +=  <strong>${rating.toFixed(1)}</strong> (${reviews.toLocaleString()} reviews);
+    }
+
+    for (const id in ratings) {
+      renderStars(id, ratings[id]);
+    }
+  </script>
 
 </body>
 </html>

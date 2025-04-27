@@ -3,83 +3,384 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gambling Sites | CSSkinProfit</title>
+  <title>Trading Sites | CSSkinProfit</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0d1117;
-      color: #c9d1d9;
-      padding: 20px;
-    }
-    h1 {
+      font-family: 'Poppins', Arial, sans-serif;
+      background: linear-gradient(135deg, #0d0d0d 0%, #1a1a2e 50%, #16213e 100%);
+      color: #ffffff;
+      padding: 40px;
       text-align: center;
-      margin-bottom: 30px;
+      overflow-x: hidden;
+      position: relative;
+    }
+    .rain {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 100%; width: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+    .rain img {
+      position: absolute;
+      width: 60px;
+      animation: fall 3s infinite linear;
+    }
+    @keyframes fall {
+      0% { top: -100px; }
+      100% { top: 100%; }
     }
     .site {
-      margin: 20px 0;
-      padding: 20px;
-      border: 1px solid #30363d;
-      border-radius: 10px;
-      background: #161b22;
-      transition: transform 0.3s ease;
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 15px;
+      background: #1e2431;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      max-width: 800px;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
     }
-    .site:hover {
-      transform: translateY(-5px);
+    h1 {
+      font-size: 50px;
+      color: #ff4757;
+      margin-bottom: 50px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
     }
-    .site a {
-      color: #58a6ff;
-      text-decoration: none;
+    h2 {
+      font-size: 32px;
+      color: #ff4757;
+      margin-bottom: 10px;
       font-weight: bold;
     }
+    .rating {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+    .star {
+      font-size: 22px;
+      display: inline-block;
+      color: #ffd700;
+      position: relative;
+    }
+    .star.empty {
+      color: #444;
+    }
+    .star.half::before {
+      content: "★";
+      position: absolute;
+      width: 50%;
+      overflow: hidden;
+      color: #ffd700;
+    }
+    .site p {
+      font-size: 18px;
+      color: #c9d1d9;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .site a {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #ff6b81;
+      color: white;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
     .site a:hover {
-      text-decoration: underline;
+      background-color: #e84118;
+      transform: scale(1.05);
     }
     .back-button {
       display: inline-block;
-      margin-top: 30px;
-      text-align: center;
+      margin-top: 40px;
+      padding: 12px 30px;
       background: #ff4757;
       color: white;
-      padding: 10px 20px;
+      font-size: 18px;
       border-radius: 8px;
       text-decoration: none;
-      transition: background 0.3s;
+      font-weight: bold;
+      transition: background 0.3s ease;
     }
     .back-button:hover {
       background: #e84118;
     }
     footer {
       margin-top: 50px;
-      text-align: center;
-      font-size: 12px;
+      font-size: 14px;
       color: #8b949e;
     }
+    .site img {
+      max-width: none;
+    }
+    .site-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 10px;
+    }
+    .site-header img {
+      max-width: 50px;
+      height: auto;
+    }
+    .background-images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -2; /* Behind rain but above the gradient background */
+}
+
+.bg-img {
+  position: absolute;
+  filter: brightness(2) blur(1px);
+  opacity: 1;
+  transform: scale(1.4);
+  pointer-events: none;
+}
+
+/* Individual placement and rotation for each image */
+.img1 {
+  top: 400px;
+  left: 40px;
+  width: 700px;
+  transform: rotate(-10deg) scale(1.2);
+  animation: float1 14s ease-in-out infinite;
+}
+
+.img2 {
+  bottom: 300px;
+  right: 100px;
+  width: 600px;
+  transform: rotate(15deg) scale(1);
+  animation: float2 18s ease-in-out infinite;
+}
+
+.img3 {
+  top: 320px;
+  right: 50px;
+  width: 800px;
+  transform: rotate(0deg) scale(1);
+  animation: float3 16s ease-in-out infinite;
+}
+
+.img4 {
+  bottom: 715px;
+  left: 40px;
+  width: 600px;
+  transform: rotate(-5deg) scale(1.1);
+  animation: float4 20s ease-in-out infinite;
+}
+
+@keyframes float1 {
+  0% { transform: translate(0, 0) rotate(-10deg) scale(1.2); }
+  50% { transform: translate(10px, 10px) rotate(-8deg) scale(1.2); }
+  100% { transform: translate(0, 0) rotate(-10deg) scale(1.2); }
+}
+
+@keyframes float2 {
+  0% { transform: translate(0, 0) rotate(15deg) scale(1); }
+  50% { transform: translate(-15px, 5px) rotate(18deg) scale(1); }
+  100% { transform: translate(0, 0) rotate(15deg) scale(1); }
+}
+
+@keyframes float3 {
+  0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  50% { transform: translate(5px, -5px) rotate(3deg) scale(1); }
+  100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+}
+
+@keyframes float4 {
+  0% { transform: translate(0, 0) rotate(-5deg) scale(1.1); }
+  50% { transform: translate(-10px, 5px) rotate(-2deg) scale(1.1); }
+  100% { transform: translate(0, 0) rotate(-5deg) scale(1.1); }
+}
+
+.main-header {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  animation: fadeIn 1.5s ease;
+}
+
+.site-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 52px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #ff4d4d, #ffa502);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(255,77,77,0.7);
+  margin-bottom: 10px;
+}
+
+.separator {
+  width: 150px;
+  height: 4px;
+  margin: 10px auto 20px auto;
+  background: linear-gradient(90deg, #ff4d4d, #ffa502);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(255,77,77,0.7);
+}
+
+.page-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 2px;
+  text-shadow: 0 0 5px rgba(255,255,255,0.5);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
   </style>
 </head>
 <body>
 
-  <h1>Gambling Sites</h1>
-
-  <div class="site">
-    <h2>CSGOEmpire</h2>
-    <p>One of the oldest and most trusted gambling platforms. Play roulette, crash, coinflip.</p>
-    <a href="https://csgoempire.com/r/YOURCODE" target="_blank">Visit CSGOEmpire</a>
+  <div class="main-header">
+    <h1 class="site-title">CS Skin Profit</h1>
+    <div class="separator"></div>
+    <h2 class="page-title">Gambling Sites</h2>
   </div>
 
-  <div class="site">
-    <h2>CSGORoll</h2>
-    <p>Gambling platform with a wide variety of games like dice, cases, and crash.</p>
-    <a href="https://csgoroll.com/en?r=YOURCODE" target="_blank">Visit CSGORoll</a>
-  </div>
+  
+
+  <div class="rain" id="rain"></div>
+
+<div class="background-images">
+  <img src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FABz7PLfYQJK9diklb-GkvP9JrafxTNXupwnjLiRp4_wiVa1rRFqYGulI9Cdd1U5NF-C_QToxOrrhZ_qvoOJlyWNw2r79w" class="bg-img img1">
+  <img src="https://cdn.csgoskins.gg/public/uih/products/aHR0cHM6Ly9jZG4uY3Nnb3NraW5zLmdnL3B1YmxpYy9pbWFnZXMvcHJvZHVjdHMvYzVjZWRlYmY2YTU2ZjRjNWYzNDNkZWZhY2E5MzZiZWUvYmFja3NpZGUucG5n/1500/auto/85/notrim/ec00434296d2d97156c19ecf6d825edb.png" class="bg-img img2">
+  <img src="https://steamuserimages-a.akamaihd.net/ugc/2448359926406899872/17B17F2F3885288C056AD13376E7970C122823F5/" class="bg-img img3">
+  <img src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposr-kLAtl7PTbTjlH7du6kb-Nkvn6NrjummJW4NFOhujT8om70QawqRc9ZGqmcNXGdFNsZ1jS-Ae_l-7tgZ7v7pzAyXRg7icj5XiMzgv3308Gn6NOEA" class="bg-img img4">
+</div>
+
+
+  <!-- Gambling Sites -->
+
+<div class="site">
+  <h2 style="display: flex; align-items: center; gap: 10px;">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAjVBMVEVHcEymUwDsrgD/m1e0XgL/nln4xgXrqwD6xQHFbAD/oVv/qF/+ygT3xwCeTgDsqgDyvgDRfwDjlwDahwCpUwDBbwDIcAC3YgDYeRL8xQD/zBTVgQD/nVu1YADXgwDMdwDGcAG7ZgDBawDTewauWADciwD/p1r+xwPytACfTgDppAD3wgDhlgD5l0bmhTTWsMyZAAAAHXRSTlMA4UjWSEJSBFo8MtDf6Ffe3PHu39Mszs/T9u/X80YrLQ8AAAEfSURBVCiRfdLZdoMgEAZgNFa0jU1O0ixd2ASVAOb9H68DLo0J6dx5vvMzIwNCt3Uo0dMqE/Hy1E5KneOKs6NQql5FNTtzohS5RhSX36wmoKJ/1HJPmSBeZb96XVrqGlqLoOTa/iw03TnH6lFl395kcb4xxjE+KkTbt6kvLjbaGMr4pLyfFRdbrbWTgBzQq2wnLSqrtaGSMX/wwL1X6Ft8dtZaRwcdOES95l9d11nTBJ3bKiiSIZSvQTXgn4oLVPIemnr1UTodTGaDcUGt8weHLK+VN4xmtboZlXFyY/6KKgszTVmlkmxxuSEaVMLK755SWg1RKrlKHp5ZvtYuIPnI7g36bsPv8IiFBUBUnmIW1trQY9z8VLv9P08+PSw+fwGFPi+rJ/QBZAAAAABJRU5ErkJggg==" alt="Clash.gg Logo" style="height: 28px;">
+    Clash.gg
+  </h2>
+  <p>Clash.gg offers a premium CS2 gambling experience with a huge variety of cases, roulette, coinflip, and crash. The site has a sleek, modern design, instant deposits and withdrawals, and a strong reputation for fairness and transparency.</p>
+  <a href="https://clash.gg/r/CSSKINPROFIT" target="_blank">Visit Site - Claim 3 Free Cases!</a>
+</div>
+
+
+
+<div class="site">
+  <h2>
+    <img src="https://daddyskins.com/static/images/logo-large-1807fd3f.webp" alt="DaddySkins Logo" style="height: 30px; vertical-align: middle; margin-right: 10px;">
+    DaddySkins
+  </h2>
+  <p>DaddySkins is a popular CS:GO case opening platform offering case battles, upgrades, and exclusive event cases. It’s known for fair odds, a clean and fast user experience, and frequent giveaways. The platform features secure deposits and withdrawals, a loyalty program, and daily promotions to reward active players. With strong community trust and a focus on transparency, DaddySkins is a top choice for anyone looking to win big or test their luck.</p>
+  <a href="https://daddyskins.com/promo-code/1703395" target="_blank" class="bonus-button">Get 5% Bonus</a>
+</div>
+
+
+
+<div class="site">
+    <h2>
+     <img src="data:image/jpeg;base64,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" alt="csgo empire logo" style="height: 30px; vertical-align: middle; margin-right: 10px;">
+       CSGOEmpire
+     </h2>
+    <p>CSGOEmpire is one of the longest-standing and most trusted platforms in the Counter-Strike skin gambling scene. Launched in 2016, the site quickly gained popularity for its simple, casino-like experience, allowing users to deposit CS2 skins, cryptocurrencies, or fiat currencies to play games and win valuable rewards.
+
+The platform originally became famous for its classic Roulette system, where players could bet on colors (Black, Red, or Green) and multiply their wagers. Over time, CSGOEmpire expanded its offerings, adding a Coinflip mode, Match Betting on professional esports games, and frequent giveaways that reward active users. With a clean, user-friendly interface and provably fair games, CSGOEmpire has built a strong reputation in the gaming community.
+
+Another major draw is the platform’s currency — Empire Coins — which mirror real money and make trading, betting, and withdrawing seamless. Players can instantly cash out Empire Coins for skins, crypto, or real money, making it one of the most flexible gambling experiences available.
+
+CSGOEmpire also places heavy emphasis on security, boasting two-factor authentication, a strict anti-fraud system, and full transparency regarding house edges and odds. The site is fully licensed and offers 24/7 live chat support to assist players.
+
+Today, CSGOEmpire remains a go-to choice for CS2 players looking to gamble responsibly, win big, and enjoy a trusted, smooth experience backed by nearly a decade of operation.<p/>
+  <a href="https://csgoempire.com/r/csskinprofit" target="_blank" class="bonus-button">Try CSGO Emipire Today!</a>
+</div>
+
+
+<div class="site">
+  <h2 style="display: flex; align-items: center; gap: 10px;">
+    <img src="https://datdrop.com/images/4cd366f6cf9a609a645fa8f651effd31.webp" alt="DatDrop Logo" style="height: 28px;">
+    DatDrop
+  </h2>
+  <p>DatDrop is one of the most popular CS:GO case opening and battle sites. Players can create and join battles, open a variety of cases, and experience unique features like case battles and upgrade systems. Known for its transparency and competitive features, DatDrop is trusted by a large community of players who enjoy high-energy case battles and frequent updates.</p>
+  <a href="https://datdrop.com/p/csskinprofit" target="_blank">Visit Site - Claim Your Bonus!</a>
+</div>
+
+<div class="site">
+  <h2 style="display: flex; align-items: center; gap: 10px;">
+    <img src="https://thaka.bing.com/th/id/OIP.hOvwzTc0c-gNdEKMYC19CQHaCf?w=340&h=117&c=7&r=0&o=5&pid=1.7" alt="FarmSkins Logo" style="height: 28px;">
+    FarmSkins
+  </h2>
+  <p>FarmSkins is a top CS:GO case opening site offering a wide range of exciting cases with great drop rates. Known for its reliability and smooth user experience, FarmSkins regularly updates its case selection and offers promotions to keep players engaged. Whether you're looking for high-tier skins or just having fun opening cases, FarmSkins provides a trusted platform to test your luck.</p>
+  <a href="https://farmskins.com/ref-csskinprofit" target="_blank">Visit Site - Claim Your Bonus!</a>
+</div>
 
   <div style="text-align: center;">
     <a href="index.html" class="back-button">⬅️ Back to Home</a>
   </div>
 
   <footer>
-    18+ only. Gamble responsibly. We may receive commissions from partner sites.
+    Prices and trading sites are subject to change. Always double-check item values before trading.
   </footer>
+
+  <script>
+    const ratings = {
+      'rating-dmarket': { score: 4.5, reviews: 19714 },
+      'rating-whitemarket': { score: 3.5, reviews: 40 },
+      'rating-gamerpay': { score: 4.0, reviews: 1397 },
+      'rating-shadowpay': { score: 3.5, reviews: 712 },
+      'rating-skinswap': { score: 5.0, reviews: 1392 }
+    };
+
+    function renderStars(id, ratingData) {
+      const container = document.getElementById(id);
+      if (!container) return;
+
+      let rating = ratingData.score;
+      const reviews = ratingData.reviews;
+
+      const fullStars = Math.floor(rating);
+      let halfStar = (rating % 1) >= 0.5;
+      const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+
+      container.innerHTML = '';
+
+      for (let i = 0; i < 5; i++) {
+        if (i < fullStars) {
+          container.innerHTML += '<span class="star">&#9733;</span>';
+        } else if (halfStar) {
+          container.innerHTML += '<span class="star half">&#9733;</span>';
+          halfStar = false;
+        } else {
+          container.innerHTML += '<span class="star empty">&#9733;</span>';
+        }
+      }
+
+      container.innerHTML +=  <strong>${rating.toFixed(1)}</strong> (${reviews.toLocaleString()} reviews);
+    }
+
+    for (const id in ratings) {
+      renderStars(id, ratings[id]);
+    }
+  </script>
 
 </body>
 </html>
