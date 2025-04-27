@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Skin Rain</title>
+  <title>CS Skin Profit</title>
   <style>
     body {
       margin: 0;
@@ -86,7 +86,7 @@
 </head>
 <body>
 
-  <h1>Welcome to Skin Rain</h1>
+  <h1>Welcome to CS Skin Profit</h1>
   <div class="button-container">
     <button class="button">Get Started</button>
     <button class="button">Learn More</button>
