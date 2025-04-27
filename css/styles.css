@@ -1,0 +1,178 @@
+/* General body styling */
+body {
+  margin: 0;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0d0d0d 0%, #1a1a2e 50%, #16213e 100%);
+  font-family: 'Poppins', Arial, sans-serif;
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+}
+
+/* Background Glow Around Edges */
+body::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  right: -100px;
+  bottom: -100px;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Light beams */
+.beam {
+  position: absolute;
+  width: 300px;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 100%);
+  animation: moveBeam 20s linear infinite;
+  transform: rotate(20deg);
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes moveBeam {
+  0% {
+    left: -400px;
+    opacity: 0.2;
+  }
+  50% {
+    left: 100%;
+    opacity: 0.05;
+  }
+  100% {
+    left: -400px;
+    opacity: 0.2;
+  }
+}
+
+/* Header styling */
+h1 {
+  font-size: 60px;
+  margin-bottom: 40px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 10;
+  background: linear-gradient(90deg, #ff4757, #ffa502);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Button container */
+.button-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  z-index: 10;
+  position: relative;
+}
+
+/* Button styling */
+.button {
+  background: linear-gradient(135deg, #ff4757, #e84118);
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 12px;
+  font-size: 22px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
+}
+
+.button:hover {
+  background: linear-gradient(135deg, #e84118, #ff6b81);
+  box-shadow: 0 6px 20px rgba(255, 107, 129, 0.6);
+  transform: scale(1.05);
+}
+
+/* Skin image styling */
+.skin {
+  position: absolute;
+  width: 80px;
+  height: auto;
+  animation: fallBounce 7s ease-in-out forwards;
+  opacity: 0.85;
+  z-index: 5;
+  pointer-events: none;
+  background-color: transparent; /* Makes the background transparent */
+  border: none;
+}
+
+/* Keyframes for skin falling effect */
+@keyframes fallBounce {
+  0% {
+    transform: translateY(-300px) rotate(0deg);
+  }
+  65% {
+    transform: translateY(70vh) rotate(180deg);
+  }
+  80% {
+    transform: translateY(58vh) rotate(270deg);
+  }
+  100% {
+    transform: translateY(75vh) rotate(360deg);
+  }
+}
+
+/* Particle styling */
+.particle {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  width: 6px;
+  height: 6px;
+  animation: floatParticle linear infinite;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Keyframes for floating particles */
+@keyframes floatParticle {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* Navigation links styling (for Gambling and Trading) */
+.nav-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.nav-links a {
+  color: #ff4757;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ff4757, #e84118);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover {
+  background: linear-gradient(135deg, #e84118, #ff6b81);
+  transform: scale(1.05);
+}
