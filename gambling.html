@@ -14,6 +14,7 @@
     }
     h1 {
       text-align: center;
+      margin-bottom: 30px;
     }
     .site {
       margin: 20px 0;
@@ -21,13 +22,38 @@
       border: 1px solid #30363d;
       border-radius: 10px;
       background: #161b22;
+      transition: transform 0.3s ease;
+    }
+    .site:hover {
+      transform: translateY(-5px);
     }
     .site a {
       color: #58a6ff;
       text-decoration: none;
+      font-weight: bold;
     }
     .site a:hover {
       text-decoration: underline;
+    }
+    .back-button {
+      display: inline-block;
+      margin-top: 30px;
+      text-align: center;
+      background: #ff4757;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .back-button:hover {
+      background: #e84118;
+    }
+    footer {
+      margin-top: 50px;
+      text-align: center;
+      font-size: 12px;
+      color: #8b949e;
     }
   </style>
 </head>
@@ -46,6 +72,14 @@
     <p>Gambling platform with a wide variety of games like dice, cases, and crash.</p>
     <a href="https://csgoroll.com/en?r=YOURCODE" target="_blank">Visit CSGORoll</a>
   </div>
+
+  <div style="text-align: center;">
+    <a href="index.html" class="back-button">⬅️ Back to Home</a>
+  </div>
+
+  <footer>
+    18+ only. Gamble responsibly. We may receive commissions from partner sites.
+  </footer>
 
 </body>
 </html>
