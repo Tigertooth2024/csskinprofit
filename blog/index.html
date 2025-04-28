@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CS Skin Profit</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background-color: #000;
+      background-image:
+        repeating-linear-gradient(45deg, rgba(0, 255, 255, 0.05) 2px, transparent 8px, transparent 70px),
+        repeating-linear-gradient(-45deg, rgba(0, 255, 255, 0.05) 2px, transparent 8px, transparent 70px);
+      background-size: 100px 100px;
+      background-position: center center;
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      animation: backgroundPulse 8s ease-in-out infinite;
+    }
+
+    @keyframes backgroundPulse {
+      0%, 100% {
+        background-size: 100px 100px;
+        background-position: center center;
+      }
+      50% {
+        background-size: 110px 110px;
+        background-position: center center;
+      }
+    }
+
+    .card {
+      background-color: #111;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+      padding: 25px;
+      margin: 30px auto;
+      max-width: 600px;
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.7);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      color: #ffffff;
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #cccccc;
+      font-size: 1em;
+      line-height: 1.6;
+    }
+
+    .card a.button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 24px;
+      background: linear-gradient(90deg, #00c6ff, #0072ff);
+      border-radius: 30px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .card a.button:hover {
+      background: linear-gradient(90deg, #0072ff, #00c6ff);
+    }
+
+    .main-header {
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 20px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .site-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 52px;
+      font-weight: 800;
+      background: linear-gradient(90deg, #ff4d4d, #ffa502);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 10px rgba(255,77,77,0.7);
+      margin-bottom: 10px;
+    }
+
+    .separator {
+      width: 150px;
+      height: 4px;
+      margin: 10px auto 20px auto;
+      background: linear-gradient(90deg, #ff4d4d, #ffa502);
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(255,77,77,0.7);
+    }
+
+    .page-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 32px;
+      font-weight: 600;
+      color: #ffffff;
+      letter-spacing: 2px;
+      text-shadow: 0 0 5px rgba(255,255,255,0.5);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Blog Post Animations */
+    @keyframes slideFadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .blog-post {
+      background: rgba(0, 0, 0, 0.85);
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 0 20px #00ffff66;
+      margin: 40px auto;
+      max-width: 600px;
+      color: white;
+      animation: slideFadeIn 0.8s ease forwards;
+      opacity: 0;
+    }
+
+    .blog-post:nth-child(1) { animation-delay: 0.2s; }
+    .blog-post:nth-child(2) { animation-delay: 0.4s; }
+    .blog-post:nth-child(3) { animation-delay: 0.6s; }
+    .blog-post:nth-child(4) { animation-delay: 0.8s; }
+
+    .blog-post h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .blog-post p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .blog-post a.read-more {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: linear-gradient(to right, #00ffff, #8a2be2);
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .blog-post a.read-more:hover {
+      background: linear-gradient(to right, #8a2be2, #00ffff);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="main-header">
+    <h1 class="site-title">CS Skin Profit</h1>
+    <div class="separator"></div>
+    <h2 class="page-title">Blog Posts</h2>
+  </div>
+
+  <!-- Blog Posts Start -->
+  <div class="blog-post">
+    <h2>Top 5 Most Profitable CS2 Skins</h2>
+    <p>We tested the most popular case opening sites — here’s the breakdown on odds, bonuses, and user experience.</p>
+    <a href="blog-5-profitable-cs2-skins.html" class="read-more">Read More</a>
+  </div>
+
+  <div class="blog-post">
+    <h2>Top 5 CS2 Trading Sites 2025</h2>
+    <p>We tested the most popular case opening sites — here’s the breakdown on odds, bonuses, and user experience.</p>
+    <a href="best-cs2-trading-sites-2025.html" class="read-more">Read More</a>
+  </div>
+
+  
+  <!-- Blog Posts End -->
+
+</body>
+</html>
