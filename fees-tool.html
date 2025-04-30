@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trading Calculator | CSSkinProfit</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K8VZ6HZZK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4K8VZ6HZZK');
+  </script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', Arial, sans-serif;
+      background: linear-gradient(135deg, #0d0d0d 0%, #1a1a2e 50%, #16213e 100%);
+      color: #ffffff;
+      padding: 40px;
+      text-align: center;
+      overflow-x: hidden;
+      position: relative;
+    }
+    .site {
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 15px;
+      background: #1e2431;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      max-width: 800px;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+    h2 {
+      font-size: 32px;
+      color: #ff4757;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    .site p {
+      font-size: 18px;
+      color: #c9d1d9;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .site a {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #ff6b81;
+      color: white;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .site a:hover {
+      background-color: #e84118;
+      transform: scale(1.05);
+    }
+    .back-button {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 12px 30px;
+      background: #ff4757;
+      color: white;
+      font-size: 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .back-button:hover {
+      background: #e84118;
+    }
+    footer {
+      margin-top: 50px;
+      font-size: 14px;
+      color: #8b949e;
+    }
+    .site-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 10px;
+    }
+    .site-header img {
+      max-width: 50px;
+      height: auto;
+    }
+    .input-box {
+      width: 100%;
+      padding: 10px;
+      background: #2f3640;
+      border: 1px solid #444;
+      border-radius: 6px;
+      color: white;
+      font-size: 16px;
+      font-family: 'Poppins', sans-serif;
+    }
+    .input-box::placeholder {
+      color: #888;
+    }
+    .site-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 52px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #ff4d4d, #ffa502);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(255,77,77,0.7);
+  margin-bottom: 10px;
+}
+
+.separator {
+  width: 150px;
+  height: 4px;
+  margin: 10px auto 20px auto;
+  background: linear-gradient(90deg, #ff4d4d, #ffa502);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(255,77,77,0.7);
+}
+
+.page-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 2px;
+  text-shadow: 0 0 5px rgba(255,255,255,0.5);
+  margin-bottom: 100px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+  </style>
+</head>
+<body>
+
+  <div class="main-header">
+    <h1 class="site-title">CS Skin Profit</h1>
+    <div class="separator"></div>
+    <h2 class="page-title">Skin Profit Calculator</h2>
+  </div>
+   <div style="display: flex; justify-content: center; margin-bottom: 30px;">
+  <table style="width: 100%; max-width: 2000px; font-size: 16px;">
+    <thead>
+      <tr>
+        <th style="text-align: left; color: #ff6b81;">Buying Fees</th>
+        <th style="text-align: right; color: #ffa502;">Selling Fees</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left;">CSFloat: 0%</td>
+        <td style="text-align: right;">CSFloat: 2%</td>
+      </tr>
+      <tr>
+        <td style="text-align: left;">Skinport: 0%</td>
+        <td style="text-align: right;">Skinport: 6-12%</td>
+      </tr>
+      <tr>
+        <td style="text-align: left;">DMarket: 0%</td>
+        <td style="text-align: right;">DMarket: 2% (10% sometimes for low-priced/liquidity items)</td>
+      </tr>
+      <tr>
+        <td style="text-align: left;">White Market: 0%</td>
+        <td style="text-align: right;">White Market: 5%</td>
+      </tr>
+      <tr>
+        <td style="text-align: left;">Gamer Pay: 0%</td>
+        <td style="text-align: right;">Gamer Pay: 0% (in wallet)</td>
+      </tr>
+      <tr>
+        <td style="text-align: left;">Shadow Pay: 0%</td>
+        <td style="text-align: right;">Shadow Pay: 5%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+      <div style="flex: 1; min-width: 250px;">
+        <label for="buyFee">Buy Fee %:</label><br>
+        <input id="buyFee" type="number" step="0.01" class="input-box" placeholder="e.g. 5">
+        <br><br>
+        <label for="buyPrice">Buying Price ($):</label><br>
+        <input id="buyPrice" type="number" step="0.01" class="input-box" placeholder="e.g. 100">
+      </div>
+      <div style="flex: 1; min-width: 250px;">
+        <label for="sellFee">Sell Fee %:</label><br>
+        <input id="sellFee" type="number" step="0.01" class="input-box" placeholder="e.g. 2.5">
+        <br><br>
+        <label for="sellPrice">Selling Price ($):</label><br>
+        <input id="sellPrice" type="number" step="0.01" class="input-box" placeholder="e.g. 130">
+      </div>
+    </div>
+
+    <button onclick="calculateProfit()" style="margin-top: 25px; width: 100%; padding: 14px; background: #ff6b81; color: white; font-size: 18px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">
+      Calculate
+    </button>
+
+    <div id="result" style="margin-top: 25px; font-size: 20px; font-weight: bold; text-align: center;"></div>
+    <div style="text-align: center;">
+    <a href="index.html" class="back-button">Back to Home</a>
+  </div>
+
+  <footer>
+    Prices and trading sites are subject to change. Always double-check item values before trading.
+  </footer>
+  </div>
+
+  <script>
+    function calculateProfit() {
+      const buyFee = parseFloat(document.getElementById('buyFee').value) || 0;
+      const sellFee = parseFloat(document.getElementById('sellFee').value) || 0;
+      const buyPrice = parseFloat(document.getElementById('buyPrice').value) || 0;
+      const sellPrice = parseFloat(document.getElementById('sellPrice').value) || 0;
+
+      const totalBuy = buyPrice * (1 + buyFee / 100);
+      const totalSell = sellPrice * (1 - sellFee / 100);
+      const profit = totalSell - totalBuy;
+      const percent = (profit / totalBuy) * 100;
+
+      const resultDiv = document.getElementById('result');
+      const isProfit = profit >= 0;
+      const color = isProfit ? 'limegreen' : 'red';
+      const symbol = isProfit ? '+' : '';
+
+      resultDiv.innerHTML = `
+        <div style="color: ${color};">
+          ${symbol}$${profit.toFixed(2)} (${symbol}${percent.toFixed(2)}%)
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>
