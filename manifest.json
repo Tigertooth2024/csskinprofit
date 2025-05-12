@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "CSFloat Sniper",
+  "version": "1.0",
+  "description": "Snipes CS2 skin deals on CSFloat by scanning and comparing listings.",
+  "permissions": [
+    "storage",
+    "tabs",
+    "scripting",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://csfloat.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "icons": {
+    "128": "icon.png"
+  }
+}

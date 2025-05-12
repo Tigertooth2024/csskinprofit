@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "api/skinport-proxy.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    {
+      "src": "/api/skinport-proxy",
+      "dest": "/api/skinport-proxy.js"
+    }
+  ]
+}
